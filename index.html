@@ -4,7 +4,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="TeXcela: a 16-week live programme where you learn Java full stack with AI the way teams work now, prove your skills from week one, and meet the companies Xcela hires for.">
-<meta name="theme-color" content="#FAFAF8">
 <title>TeXcela · Learn AI-native Java full stack and get hired</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20120%20120%22%20width=%22120%22%20height=%22120%22%20role=%22img%22%20aria-label=%22TeXcela%22%3E%3Ctitle%3ETeXcela%3C/title%3E%3Crect%20x=%220%22%20y=%220%22%20width=%22120%22%20height=%22120%22%20rx=%2228%22%20fill=%22%230e2824%22/%3E%3Cg%20transform=%22translate%2810%2015%29%20scale%280.8%29%22%3E%3Crect%20x=%2214%22%20y=%2234%22%20width=%2266%22%20height=%2217%22%20rx=%223%22%20fill=%22%23f6efe2%22/%3E%3Crect%20x=%2238.5%22%20y=%2234%22%20width=%2217%22%20height=%2270%22%20rx=%223%22%20fill=%22%23f6efe2%22/%3E%3Cpath%20d=%22M86%2010%20L108%2032%20M108%2010%20L86%2032%22%20stroke=%22%23f5a623%22%20stroke-width=%228.5%22%20stroke-linecap=%22round%22%20fill=%22none%22/%3E%3C/g%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -663,6 +662,219 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
 @media (max-width:980px){.ai-grid{grid-template-columns:minmax(0,1fr)}.ai-grid .feature .stage{min-height:0;padding:28px 16px}}
 @media (max-width:560px){.ai-cards{grid-template-columns:minmax(0,1fr)}}
 
+
+/* ===== v19: UX pass ===== */
+.showcase.block{padding-bottom:clamp(80px,10vw,128px)}
+/* courses */
+.courses{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.course{position:relative;display:flex;flex-direction:column;padding:clamp(28px,3.5vw,40px);text-decoration:none;color:inherit;overflow:hidden;transition:border-color .3s,transform .3s var(--ease)}
+.course:hover{transform:translateY(-2px)}
+.c-live{border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.c-live::before{content:"";position:absolute;right:-120px;top:-140px;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(245,166,35,.18),transparent);pointer-events:none}
+.co-top{display:flex;justify-content:space-between;align-items:center}
+.co-tag{display:inline-flex;align-items:center;gap:8px;height:28px;padding:0 12px;border-radius:999px;background:var(--surface-2);font-size:13px;color:var(--text-2)}
+.co-tag.live{color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.co-tag i{width:7px;height:7px;border-radius:50%;background:currentColor}
+.co-arrow{font-size:18px;color:var(--text-3);transition:transform .3s var(--ease),color .2s}
+.course:hover .co-arrow{transform:translate(2px,-2px);color:var(--text)}
+.course h3{margin-top:28px;font-size:clamp(24px,2.4vw,30px);letter-spacing:-.03em}
+.course>p{margin-top:12px;font-size:16px;max-width:44ch}
+.co-facts{display:flex;gap:32px;margin:28px 0 0;padding:20px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.co-facts dt{font-size:12.5px;color:var(--text-3)}
+.co-facts dd{margin:4px 0 0;font-size:16px;font-weight:500;color:var(--text)}
+.co-stack{list-style:none;margin:20px 0 32px;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.co-stack li{padding:5px 10px;border-radius:8px;background:var(--surface-2);font:400 12.5px var(--mono);color:var(--text-2)}
+.co-btn{margin-top:auto;align-self:flex-start}
+@media (max-width:860px){.courses{grid-template-columns:minmax(0,1fr)}.co-facts{gap:20px;flex-wrap:wrap}}
+
+.course{padding:0;border-radius:var(--r-xl)}
+.course>*:not(.co-band){margin-left:clamp(24px,3vw,36px);margin-right:clamp(24px,3vw,36px)}
+.co-band{height:120px;min-height:0!important;padding:0!important;border-radius:var(--r-xl) var(--r-xl) 0 0;border:0!important}
+.co-top{margin-top:-14px;position:relative;z-index:1}
+.co-top .co-tag{background:var(--surface);box-shadow:0 0 0 1px var(--line)}
+.co-top .co-tag.live{background:var(--surface);color:var(--accent)}
+.co-arrow{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--surface);box-shadow:0 0 0 1px var(--line);font-size:15px}
+.course h3{margin-top:20px}
+.co-btn{margin-bottom:clamp(24px,3vw,36px)}
+.c-live::before{display:none}
+.promise{display:flex;gap:16px;align-items:center;margin-top:16px;padding:20px 24px;border-radius:var(--r-xl);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);background:color-mix(in srgb,var(--accent) 5%,var(--surface))}
+.promise p{font-size:15.5px;color:var(--text-2)}
+.promise .link-arrow{margin-left:6px;font-size:15px}
+.skills li{padding:14px 12px}
+.pp-list li{padding:16px 0}
+
+/* section heads: one column, supporting line under the headline */
+.sh{grid-template-columns:minmax(0,1fr)!important;gap:16px!important;align-items:start}
+.sh .title{max-width:20ch}
+.sh-p{padding-bottom:0;max-width:56ch}
+.sh-action{grid-template-columns:minmax(0,1fr) auto!important;align-items:end}
+@media (max-width:860px){.sh-action{grid-template-columns:minmax(0,1fr)!important}}
+
+/* stack strip with logos */
+.stack{border-top:1px solid var(--line);padding:56px 0 64px}
+.strip-lbl{font-size:14px;color:var(--text-3)}
+.stack .marquee{margin-top:28px;display:grid;gap:14px}
+.stack .mrow{gap:12px;padding-right:12px}
+.stack .r1{animation-duration:55s}
+.stack .r2{animation-direction:reverse;animation-duration:70s}
+.lg,.hb{display:inline-flex;align-items:center;gap:10px;height:48px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:15px;font-weight:500;color:var(--text-2);white-space:nowrap;transition:color .25s,border-color .25s,background-color .25s}
+.lg svg{width:20px;height:20px;fill:currentColor;color:var(--text-3);filter:grayscale(1);opacity:.75;transition:color .3s,opacity .3s}
+.lg:hover{color:var(--text);border-color:var(--line-2)}
+.lg:hover svg{color:var(--c);opacity:1}
+.hb{height:40px;font-size:14px;background:transparent}
+.hb svg{width:17px;height:17px;color:var(--text-3)}
+.hb:hover{color:var(--text)}
+.hb:hover svg{color:var(--accent)}
+@media (hover:none){.lg svg{color:var(--c);opacity:.85}.hb svg{color:var(--accent)}}
+.stack .mrow span.lg{font-size:15px;letter-spacing:-.01em;color:var(--text-2)}
+.stack .mrow span.hb{font-size:14px;letter-spacing:0;color:var(--text-3)}
+.stack .mrow span.lg:hover,.stack .mrow span.hb:hover{color:var(--text)}
+.lg svg{filter:none}
+
+/* problem -> fix */
+.pf{border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);overflow:hidden}
+.pf-row{display:grid;grid-template-columns:minmax(0,1fr) auto minmax(0,1.25fr);align-items:center;gap:24px;padding:28px 32px}
+.pf-row+.pf-row{border-top:1px solid var(--line)}
+.pf-q{font-size:16px;line-height:1.5;color:var(--text-3);font-style:italic}
+.pf-arr{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--surface-2);color:var(--text-2)}
+.pf-a{display:flex;align-items:center;gap:14px}
+.pf-a>div:not(.pf-v){flex:1}
+.pf-a b{display:block;font-size:17px;letter-spacing:-.015em}
+.pf-a div>span{font-size:14px;color:var(--text-2)}
+.pf-i{display:grid;place-items:center;width:44px;height:44px;flex:none;border-radius:12px;background:var(--evergreen);color:#3CF0B4}
+.pf-i svg{width:20px;height:20px}
+.pf-v{flex:none}
+.pf-ms{display:flex;gap:4px}.pf-ms i{width:18px;height:6px;border-radius:3px;background:var(--surface-3)}.pf-ms i.on{background:var(--accent)}
+.pf-chip{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--text-3)}
+.pf-chip em{font-style:normal;padding:5px 10px;border-radius:999px;background:var(--surface-2);color:var(--text-2)}
+.pf-chip em.g{background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-weight:500}
+@media (max-width:860px){.pf-row{grid-template-columns:minmax(0,1fr);gap:14px;padding:22px}.pf-arr{transform:rotate(90deg);width:28px;height:28px}.pf-v{display:none}}
+.compare{margin-top:16px}
+.c-row>.c-tx{background:color-mix(in srgb,var(--accent) 6%,var(--surface))!important}
+.c-head .c-tx{border-top:2px solid var(--accent)}
+.c-ic{display:inline-grid;place-items:center;width:28px;height:28px;margin-right:4px;border-radius:8px;background:var(--surface-2);color:var(--text-2);flex:none}
+.c-ic svg{width:15px;height:15px}
+.c-row>span:first-child{align-items:center}
+
+/* hero art (A1) and placement art (B3) */
+.art{position:relative;height:540px}
+.fig{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:96%;width:auto}
+.fl{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 8px;border-radius:999px;background:var(--surface);box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 16px 32px -16px rgba(16,24,22,.35),0 0 0 1px var(--line);font-size:14.5px;font-weight:500;color:var(--text);white-space:nowrap;animation:bob 6s ease-in-out infinite}
+.fl i{display:grid;place-items:center;width:32px;height:32px;border-radius:50%;background:var(--evergreen);color:#3CF0B4}
+.fl i svg{width:16px;height:16px}
+.fl.d1{animation-delay:-2s}
+.fl.d2{animation-delay:-4s}
+.fl.solid{background:var(--evergreen);color:#F6EFE2;box-shadow:0 16px 32px -14px rgba(18,48,45,.6)}
+.fl.solid i{background:rgba(255,255,255,.12)}
+@keyframes bob{50%{transform:translateY(-6px)}}
+.mw-bar{display:flex;align-items:center;gap:5px;padding:9px 12px;border-bottom:1px solid rgba(255,255,255,.08);font:400 11.5px var(--mono);color:#8A908E}
+.mw-bar i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.16)}
+.mw-bar span{margin-left:6px}
+pre{margin:0}
+.k{color:#B4C2F0}
+.a{color:#9FD8C4}
+.s{color:#E2C792}
+/* A1 */
+.a1 .halo{position:absolute;inset:24px 34px 0 74px;border-radius:44px;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.a1 .halo.h2{inset:44px 54px 0 94px;border-radius:38px;background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.a1 .pframe{position:absolute;inset:64px 74px 0 114px;border-radius:32px;overflow:hidden;display:block!important;padding:0!important}
+.a1 .chips-l{position:absolute;left:0;top:200px;display:grid;gap:12px;justify-items:start}
+.a1 .chips-l .fl:nth-child(2){margin-left:28px}
+.mini-win{position:absolute;right:0;top:110px;width:220px;border-radius:14px;overflow:hidden;animation:bob 7s ease-in-out infinite -1s}
+.mini-win code{display:block;padding:3px 12px;font:400 11.5px var(--mono);color:#E9EDEB;background:rgba(60,240,180,.06)}
+.mini-win code:nth-of-type(1){margin-top:8px}
+.mini-win code b{color:#3CF0B4;font-weight:400}
+.mw-ok{display:flex;align-items:center;gap:6px;padding:10px 12px;font-size:12px;color:#A3A8A6}
+.mw-ok svg{width:14px;height:14px;color:#3CF0B4}
+.badge-dk{position:absolute;right:20px;bottom:36px;display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:16px;animation:bob 6s ease-in-out infinite -3s}
+.badge-dk>svg{width:28px;height:28px;padding:6px;border-radius:50%;background:rgba(60,240,180,.14);color:#3CF0B4}
+.badge-dk b{display:block;font-size:15px}
+.badge-dk span{font-size:12px;color:#A3A8A6}
+.o1{left:30px;top:50px}
+.o2{right:40px;top:120px;width:52px;height:52px;animation-delay:-2s}
+.o3{left:40px;bottom:60px;width:76px;height:76px;animation-delay:-4s}
+.bav{width:28px;height:28px;border-radius:50%;overflow:hidden;background:#DCE6E1}
+.bav .avs{width:100%;height:100%}
+.kp{display:flex;align-items:center;gap:12px}
+.kp b{display:block;font-size:14.5px}
+.kp span{font-size:12px;color:#A3A8A6}
+.ring-s{display:grid;place-items:center;width:48px;height:48px;flex:none;border-radius:50%;background:conic-gradient(#3CF0B4 0 86%,rgba(255,255,255,.1) 0)}
+.ring-s span{display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:#0E1110;font-size:13px!important;font-weight:600;color:#fff!important}
+.ring-s.big{width:60px;height:60px}
+.ring-s.big span{width:48px;height:48px;font-size:15px!important}
+/* B3 */
+.gridbg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:36px 36px;-webkit-mask-image:radial-gradient(ellipse at center,#000 40%,transparent 75%);mask-image:radial-gradient(ellipse at center,#000 40%,transparent 75%)}
+.b3 .prof{left:50%;top:20px;transform:translateX(-50%);width:320px;padding:18px}
+.bars2{display:grid;gap:10px;margin-top:16px}
+.bars2 div{display:grid;grid-template-columns:90px 1fr;align-items:center;gap:10px;font-size:12px;color:#A3A8A6}
+.bars2 i{display:block;height:6px;border-radius:9px;background:linear-gradient(90deg,#3CF0B4 calc(var(--v)*100%),rgba(255,255,255,.08) 0)}
+.lbl-chip{position:absolute;left:50%;top:228px;transform:translateX(-50%);display:inline-flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;background:var(--surface);box-shadow:0 0 0 1px var(--line),0 10px 24px -14px rgba(0,0,0,.3);font-size:13.5px;font-weight:500;color:var(--text);white-space:nowrap}
+.lbl-chip svg{width:16px;height:16px;color:var(--accent)}
+.b3::before{content:"";position:absolute;left:50%;top:190px;height:250px;border-left:1px dashed var(--line-2)}
+.role{position:absolute;display:flex;align-items:center;gap:12px;width:280px;padding:14px 16px;border-radius:16px;background:var(--surface);box-shadow:0 18px 36px -20px rgba(16,24,22,.35),0 0 0 1px var(--line);animation:bob 7s ease-in-out infinite}
+.role .co{display:grid;place-items:center;width:36px;height:36px;flex:none;border-radius:10px;background:var(--h);color:#fff;font-weight:600}
+.role small{display:block;font-size:12px;color:var(--text-3)}
+.role b{font-size:14.5px;color:var(--text)}
+.role em{margin-left:auto;font-style:normal;padding:4px 10px;border-radius:999px;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:12px;font-weight:500}
+.role.r1{left:0;top:290px}
+.role.r2{right:0;top:330px;animation-delay:-2s}
+.role.r3{left:50%;margin-left:-140px;top:430px;animation-delay:-4s}
+.role{width:300px}
+.role b,.role small{white-space:nowrap}
+.role.r1{top:280px}
+.role.r2{top:350px}
+.role.r3{top:440px}
+.hero2{padding-block:clamp(56px,7vw,96px) clamp(56px,7vw,88px)}
+.hero2-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:center}
+.hero2 h1{margin-top:20px;font-size:clamp(38px,4.5vw,64px)!important;line-height:1.03;letter-spacing:-.045em}
+.hero2 .h1-2{color:var(--text-2)}.hero2 .rotator{color:var(--text)}
+.hero2 .hero-sub{margin-top:20px;max-width:48ch}
+.hero2 .cta-row{margin-top:32px}.hero2 .merit{margin-top:16px}
+/* face-safe layout: chips over the shoulders, AI window above the head */
+.a1{height:560px;max-width:600px;width:100%;justify-self:end}
+.a1 .halo{inset:20px 24px 0 64px}.a1 .halo.h2{inset:40px 44px 0 84px}.a1 .pframe{inset:60px 64px 0 104px}
+.a1 .fig{left:58%;height:88%}
+.a1 .mini-win{top:0;right:0}
+.a1 .chips-l{top:auto;bottom:90px;left:0}
+.a1 .badge-dk{right:0;bottom:20px}
+.mini-win,.badge-dk,.prof{background:#0E1110;border:1px solid rgba(255,255,255,.1);color:#E9EDEB;box-shadow:0 30px 60px -28px rgba(0,0,0,.55)}
+.mini-win b,.badge-dk b,.prof b{color:#F4F5F4}
+.hire{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hire-steps{list-style:none;margin:0;padding:0;display:grid}
+.hire-steps li{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--line)}
+.hire-steps li:last-child{border-bottom:1px solid var(--line)}
+.hire-steps span{font:500 13px var(--mono);color:var(--text-3);padding-top:3px}
+.hire-steps h3{font-size:18px;letter-spacing:-.02em}.hire-steps p{margin-top:4px;font-size:15px;color:var(--text-2)}
+.b3{height:560px;width:100%;max-width:600px;justify-self:end}
+.b3 .prof{position:absolute;left:50%;top:20px;transform:translateX(-50%);width:320px;padding:18px;border-radius:16px}
+@media (max-width:1000px){
+  .hero2-grid,.hire{grid-template-columns:minmax(0,1fr)}
+  .a1,.b3{justify-self:center}
+}
+@media (max-width:620px){
+  .a1,.b3{height:auto;aspect-ratio:600/560;max-width:none}
+  .art-scale{position:absolute;inset:0}
+  .a1>*,.b3>*{zoom:.6}
+}
+.a1 .pframe>.fig{position:absolute;bottom:0}
+@media (max-width:620px){.b3::before{display:none}}
+
+/* hero, focused: one action, one visual, two supporting cards */
+.btn-lg{height:52px;padding:0 24px;font-size:16px;border-radius:12px}
+.hero2 .cta-row{align-items:center;gap:24px}
+.link-arrow.quiet{font-size:15.5px;color:var(--text-2)}.link-arrow.quiet:hover{color:var(--text)}
+.micro{margin-top:14px;font-size:13.5px;color:var(--text-3)}
+
+/* why: worry -> answer, three quiet columns */
+.wa3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);overflow:hidden}
+.wa3 article{padding:32px 28px}
+.wa3 article+article{border-left:1px solid var(--line)}
+.wq{font-size:15px;line-height:1.5;color:var(--text-3);padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line);min-height:88px}
+.wa3 h3{font-size:19px;letter-spacing:-.02em;color:var(--text)}
+.wa3 h3::before{content:"";display:inline-block;width:8px;height:8px;margin-right:10px;border-radius:50%;background:var(--accent);vertical-align:2px}
+.wa3 h3+p{margin-top:6px;font-size:15px;color:var(--text-2)}
+@media (max-width:860px){.wa3{grid-template-columns:minmax(0,1fr)}.wa3 article+article{border-left:0;border-top:1px solid var(--line)}.wq{min-height:0}}
+
 </style>
 </head>
 <body>
@@ -675,11 +887,10 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
   <div class="wrap">
     <a class="brand" href="#top" aria-label="TeXcela home"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -2 789.7 211.0" class="wm" aria-hidden="true" focusable="false"><g transform="translate(0.00 10.00) scale(2.12857) translate(-14 -34)"><rect x="14" y="34" width="66" height="17" rx="3" fill="currentColor"/><rect x="38.5" y="34" width="17" height="70" rx="3" fill="currentColor"/></g><path d="M192.0857142857143 161.4Q174.6857142857143 161.4 161.8857142857143 153.7Q149.0857142857143 146.0 142.0857142857143 133.0Q135.0857142857143 120.0 135.0857142857143 104.19999999999999Q135.0857142857143 87.8 142.3857142857143 75.0Q149.6857142857143 62.19999999999999 162.0857142857143 54.79999999999999Q174.4857142857143 47.39999999999999 190.0857142857143 47.39999999999999Q203.0857142857143 47.39999999999999 213.0857142857143 51.49999999999999Q223.0857142857143 55.599999999999994 229.9857142857143 62.99999999999999Q236.8857142857143 70.39999999999999 240.4857142857143 80.1Q244.0857142857143 89.8 244.0857142857143 101.19999999999999Q244.0857142857143 104.4 243.78571428571428 107.5Q243.4857142857143 110.6 242.6857142857143 112.8H166.2857142857143Q166.6857142857143 117.0 168.2857142857143 120.6Q171.2857142857143 127.6 177.48571428571432 131.5Q183.6857142857143 135.4 192.4857142857143 135.4Q200.4857142857143 135.4 206.1857142857143 132.2Q211.8857142857143 129.0 215.0857142857143 123.4L239.0857142857143 134.8Q235.8857142857143 142.8 228.9857142857143 148.8Q222.0857142857143 154.8 212.68571428571428 158.10000000000002Q203.28571428571428 161.4 192.0857142857143 161.4ZM166.8857142857143 90.8H212.2857142857143Q212.0857142857143 88.2 211.2857142857143 85.8Q209.0857142857143 79.19999999999999 203.5857142857143 75.29999999999998Q198.0857142857143 71.39999999999999 190.0857142857143 71.39999999999999Q182.2857142857143 71.39999999999999 176.6857142857143 75.19999999999999Q171.0857142857143 79.0 168.2857142857143 86.39999999999999Q167.4857142857143 88.39999999999999 166.8857142857143 90.8Z" fill="currentColor"/><path d="M264.45 30.76 L371.92 138.24 M371.92 30.76 L264.45 138.24" class="wx" stroke-width="41.52" stroke-linecap="round" fill="none"/><path d="M460.28571428571433 161.4Q443.8857142857143 161.4 430.78571428571433 153.9Q417.6857142857143 146.4 409.9857142857143 133.4Q402.28571428571433 120.4 402.28571428571433 104.19999999999999Q402.28571428571433 88.0 409.88571428571436 75.1Q417.4857142857143 62.19999999999999 430.6857142857143 54.79999999999999Q443.8857142857143 47.39999999999999 460.28571428571433 47.39999999999999Q472.4857142857143 47.39999999999999 482.88571428571436 51.599999999999994Q493.28571428571433 55.8 500.6857142857143 63.3Q508.0857142857143 70.8 511.28571428571433 81.0L485.28571428571433 92.2Q482.4857142857143 84.0 475.78571428571433 79.19999999999999Q469.0857142857143 74.39999999999999 460.28571428571433 74.39999999999999Q452.4857142857143 74.39999999999999 446.38571428571436 78.19999999999999Q440.28571428571433 82.0 436.78571428571433 88.8Q433.28571428571433 95.6 433.28571428571433 104.4Q433.28571428571433 113.19999999999999 436.78571428571433 120.0Q440.28571428571433 126.8 446.38571428571436 130.6Q452.4857142857143 134.4 460.28571428571433 134.4Q469.28571428571433 134.4 475.88571428571436 129.6Q482.4857142857143 124.8 485.28571428571433 116.6L511.28571428571433 128.0Q508.28571428571433 137.6 500.88571428571436 145.2Q493.4857142857143 152.8 483.0857142857143 157.10000000000002Q472.6857142857143 161.4 460.28571428571433 161.4Z" fill="currentColor"/><path d="M572.4857142857143 161.4Q555.0857142857143 161.4 542.2857142857142 153.7Q529.4857142857143 146.0 522.4857142857143 133.0Q515.4857142857143 120.0 515.4857142857143 104.19999999999999Q515.4857142857143 87.8 522.7857142857142 75.0Q530.0857142857143 62.19999999999999 542.4857142857143 54.79999999999999Q554.8857142857144 47.39999999999999 570.4857142857143 47.39999999999999Q583.4857142857143 47.39999999999999 593.4857142857143 51.49999999999999Q603.4857142857143 55.599999999999994 610.3857142857144 62.99999999999999Q617.2857142857143 70.39999999999999 620.8857142857144 80.1Q624.4857142857143 89.8 624.4857142857143 101.19999999999999Q624.4857142857143 104.4 624.1857142857143 107.5Q623.8857142857144 110.6 623.0857142857143 112.8H546.6857142857143Q547.0857142857143 117.0 548.6857142857143 120.6Q551.6857142857143 127.6 557.8857142857144 131.5Q564.0857142857143 135.4 572.8857142857144 135.4Q580.8857142857144 135.4 586.5857142857144 132.2Q592.2857142857143 129.0 595.4857142857143 123.4L619.4857142857143 134.8Q616.2857142857143 142.8 609.3857142857144 148.8Q602.4857142857143 154.8 593.0857142857143 158.10000000000002Q583.6857142857143 161.4 572.4857142857143 161.4ZM547.2857142857143 90.8H592.6857142857143Q592.4857142857143 88.2 591.6857142857143 85.8Q589.4857142857143 79.19999999999999 583.9857142857143 75.29999999999998Q578.4857142857143 71.39999999999999 570.4857142857143 71.39999999999999Q562.6857142857143 71.39999999999999 557.0857142857143 75.19999999999999Q551.4857142857143 79.0 548.6857142857143 86.39999999999999Q547.8857142857144 88.39999999999999 547.2857142857143 90.8Z" fill="currentColor"/><path d="M633.0857142857143 159.0V7.599999999999994H663.0857142857143V159.0Z" fill="currentColor"/><path d="M709.8857142857142 161.4Q698.0857142857143 161.4 689.4857142857143 157.60000000000002Q680.8857142857142 153.8 676.2857142857142 146.7Q671.6857142857143 139.6 671.6857142857143 129.8Q671.6857142857143 120.6 675.8857142857144 113.5Q680.0857142857143 106.4 688.7857142857142 101.6Q697.4857142857143 96.8 710.4857142857143 94.8L740.6857142857143 90.0V87.0Q740.6857142857143 80.8 735.7857142857142 76.6Q730.8857142857142 72.39999999999999 722.4857142857143 72.39999999999999Q714.4857142857143 72.39999999999999 708.3857142857144 76.79999999999998Q702.2857142857143 81.19999999999999 699.4857142857143 88.39999999999999L675.4857142857143 77.0Q678.6857142857143 67.8 685.6857142857143 61.199999999999996Q692.6857142857143 54.599999999999994 702.4857142857143 50.99999999999999Q712.2857142857143 47.39999999999999 723.8857142857142 47.39999999999999Q737.6857142857143 47.39999999999999 748.2857142857143 52.39999999999999Q758.8857142857144 57.39999999999999 764.7857142857143 66.29999999999998Q770.6857142857143 75.19999999999999 770.6857142857143 87.0V159.0H742.6857142857143V148.6Q740.8857142857142 150.6 738.8857142857142 152.0Q733.0857142857143 156.8 725.8857142857144 159.10000000000002Q718.6857142857143 161.4 709.8857142857142 161.4ZM740.6857142857143 112.0 715.8857142857142 116.4Q709.4857142857143 117.6 706.0857142857143 120.5Q702.6857142857143 123.4 702.6857142857143 128.8Q702.6857142857143 133.8 706.4857142857143 136.60000000000002Q710.2857142857143 139.4 715.8857142857142 139.4Q723.2857142857143 139.4 728.8857142857144 136.2Q734.4857142857143 133.0 737.5857142857143 127.5Q740.6857142857143 122.0 740.6857142857143 115.4Z" fill="currentColor"/></svg></a>
     <nav aria-label="Main"><ul class="nav-links" id="navlinks">
+      <li><a href="#courses">Courses</a></li>
       <li><a href="#programme">Programme</a></li>
       <li><a href="#ai">AI</a></li>
-      <li><a href="#how">How it works</a></li>
       <li><a href="#trainer">Trainer</a></li>
-      <li><a href="#profile">Readiness Profile</a></li>
       <li><a href="#fees">Fees</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul></nav>
@@ -694,30 +905,85 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
 
 <main>
   <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="wrap hero-grid">
-      <p class="kicker reveal"><span class="k-dot" aria-hidden="true"></span>AI-Native Java Full Stack · Live online · Batch 1, January 2027</p>
-      <h1 class="reveal" style="--d:.06s">Learn to build with AI.<br><span class="h1-2">Get hired for what you can <span class="rotator" id="rotator"><span class="word on">ship.</span><span class="word">debug.</span><span class="word">test.</span><span class="word">explain.</span></span></span></h1>
-      <div class="hero-side reveal" style="--d:.12s">
-        <p class="hero-sub">16 weeks of live classes where you learn Java full stack the way teams work now, with AI at your side. Prove your skills from week one, then meet the companies Xcela hires for.</p>
+  <section class="hero hero2" id="hero">
+    <div class="wrap hero2-grid">
+      <div class="hero2-copy">
+        <p class="kicker reveal"><span class="k-dot" aria-hidden="true"></span>AI-Native Java Full Stack · Live online · Batch 1, January 2027</p>
+        <h1 class="reveal" style="--d:.06s">Learn to build with AI.<br><span class="h1-2">Get hired for what you can <span class="rotator" id="rotator"><span class="word on">ship.</span><span class="word">debug.</span><span class="word">test.</span><span class="word">explain.</span></span></span></h1>
+        <p class="hero-sub reveal" style="--d:.12s">16 weeks of live classes. Real projects. Introductions to companies that are hiring.</p>
+        <div class="cta-row reveal" style="--d:.2s"><a class="btn btn-primary btn-lg" href="#how">Take the free skill check</a><a class="link-arrow quiet" href="#courses">See courses <span aria-hidden="true">→</span></a></div>
+        <p class="micro reveal" style="--d:.26s">Free · About an hour · No pass mark</p>
       </div>
-      <div class="hero-actions reveal" style="--d:.2s">
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#how">Take the free skill check</a>
-          <a class="btn btn-secondary" href="#fees">See fees</a>
+      <div class="art a1 reveal" style="--d:.15s" aria-hidden="true"><div class="halo"></div><div class="halo h2"></div>
+          <div class="stage field f1 pframe"><svg class="fig" viewBox="0 0 400 480" preserveAspectRatio="xMidYMax meet" role="img" aria-label="Illustrated student"><defs><linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F6B5E"/><stop offset="1" stop-color="#2F6B5E" stop-opacity=".85"/></linearGradient></defs><path d="M40 480C52 398 112 356 200 350C288 356 348 398 360 480Z" fill="url(#g1)"/><path d="M168 352L200 398L232 352Z" fill="#F2EDE4"/><path d="M176 292H224L228 356Q200 372 172 356Z" fill="#9B6A48"/><ellipse cx="138" cy="240" rx="11" ry="17" fill="#9B6A48"/><ellipse cx="262" cy="240" rx="11" ry="17" fill="#9B6A48"/><ellipse cx="200" cy="232" rx="63" ry="78" fill="#B9845E"/><path d="M136 226C128 160 164 136 206 138C252 140 276 170 266 226C262 204 250 190 232 186C208 178 182 190 160 186C148 198 140 210 136 226Z" fill="#1B1714"/><path d="M166 214Q178 208 190 213M210 213Q222 208 234 214" stroke="#1B1714" stroke-width="5" fill="none" stroke-linecap="round"/><circle cx="179" cy="236" r="3.6" fill="#1A1410"/><circle cx="221" cy="236" r="3.6" fill="#1A1410"/><path d="M200 244Q196 262 204 266" stroke="#9B6A48" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M180 282Q200 298 220 282" stroke="#5E3626" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M120 376L138 480M280 376L262 480" stroke="#14302B" stroke-width="18" stroke-linecap="round"/></svg></div>
+          <div class="mini-win"><div class="mw-bar"><i></i><i></i><i></i><span>AI pair</span></div><code><b>+</b> if (city.isBlank())</code><code><b>+</b>   return List.of();</code><span class="mw-ok"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Tests passing</span></div>
+                  <div class="chips-l"><span class="fl"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></i>Live classes</span><span class="fl d1"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/></svg></i>Mentor code reviews</span><span class="fl d2"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg></i>4 projects you ship</span></div>
+          <div class="badge-dk"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><div><b>Job-ready</b><span>Readiness Profile · Week 12</span></div></div>
         </div>
-        <a class="news" href="#ai"><b>New:</b> how we teach AI <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="block" id="courses">
+    <div class="wrap">
+      <div class="sh reveal"><h2 class="title">Pick your path.</h2><p class="sh-p">We start with Java, what most Indian hiring teams ask freshers for. Python and GenAI comes next.</p></div>
+      <div class="courses">
+        <a class="card course c-live reveal" href="https://learn.texcela.com">
+          <div class="co-band stage field f1" aria-hidden="true"></div>
+          <div class="co-top"><span class="co-tag live"><i></i>Enrolling now</span><span class="co-arrow" aria-hidden="true">↗</span></div>
+          <h3>AI-Native Java Full Stack</h3>
+          <p>Build and ship full stack apps with Java, Spring Boot and React, using AI the way teams do.</p>
+          <dl class="co-facts"><div><dt>Length</dt><dd>16 weeks</dd></div><div><dt>Starts</dt><dd>Jan 2027</dd></div><div><dt>Batch</dt><dd>35–40</dd></div><div><dt>Fee</dt><dd>₹35,000</dd></div></dl>
+          <ul class="co-stack"><li>Java 21</li><li>Spring Boot</li><li>SQL</li><li>React</li><li>AI tools</li></ul>
+          <span class="btn btn-primary co-btn">View course</span>
+        </a>
+        <a class="card course reveal" style="--d:.06s" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">
+          <div class="co-band stage field f6" aria-hidden="true"></div>
+          <div class="co-top"><span class="co-tag">Coming next</span><span class="co-arrow" aria-hidden="true">↗</span></div>
+          <h3>Python and GenAI</h3>
+          <p>Build with Python and modern AI: APIs, data work and AI-powered apps. Same proof, same placement sprint.</p>
+          <dl class="co-facts"><div><dt>Length</dt><dd>16 weeks</dd></div><div><dt>Starts</dt><dd>After Java</dd></div><div><dt>Batch</dt><dd>35–40</dd></div><div><dt>Fee</dt><dd>To be announced</dd></div></dl>
+          <ul class="co-stack"><li>Python</li><li>FastAPI</li><li>SQL</li><li>LLM apps</li><li>AI tools</li></ul>
+          <span class="btn btn-secondary co-btn">Get notified</span>
+        </a>
       </div>
-      <p class="merit reveal" style="--d:.26s">Free skill check, about an hour, no pass mark. Score <b>Ready</b> and pay ₹30,000 instead of ₹35,000.</p>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="strip stack" aria-label="What you will work with">
+    <div class="wrap"><p class="strip-lbl">The tools and habits hiring teams look for</p></div>
+    <div class="marquee"><div class="mrow r1"><span class="lg" style="--c:#ED8B00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.915 0 11.7.215C9.515 2.4 7.47 6.39 6.046 10.483c-1.064 1.024-3.633 2.81-3.711 3.551-.093.87 1.746 2.611 1.55 3.235-.198.625-1.304 1.408-1.014 1.939.1.188.823.011 1.277-.491a13.389 13.389 0 0 0-.017 2.14c.076.906.27 1.668.643 2.232.372.563.956.911 1.667.911.397 0 .727-.114 1.024-.264.298-.149.571-.33.91-.5.68-.34 1.634-.666 3.53-.604 1.903.062 2.872.39 3.559.704.687.314 1.15.664 1.925.664.767 0 1.395-.336 1.807-.9.412-.563.631-1.33.72-2.24.06-.623.055-1.32 0-2.066.454.45 1.117.604 1.213.424.29-.53-.816-1.314-1.013-1.937-.198-.624 1.642-2.366 1.549-3.236-.08-.748-2.707-2.568-3.748-3.586C16.428 6.374 14.308 2.394 12.13.215zm.175 6.038a2.95 2.95 0 0 1 2.943 2.942 2.95 2.95 0 0 1-2.943 2.943A2.95 2.95 0 0 1 9.148 8.98a2.95 2.95 0 0 1 2.942-2.942zM8.685 7.983a3.515 3.515 0 0 0-.145.997c0 1.951 1.6 3.55 3.55 3.55 1.95 0 3.55-1.598 3.55-3.55 0-.329-.046-.648-.132-.951.334.095.64.208.915.336a42.699 42.699 0 0 1 2.042 5.829c.678 2.545 1.01 4.92.846 6.607-.082.844-.29 1.51-.606 1.94-.315.431-.713.651-1.315.651-.593 0-.932-.27-1.673-.61-.741-.338-1.825-.694-3.792-.758-1.974-.064-3.073.293-3.821.669-.375.188-.659.373-.911.5s-.466.2-.752.2c-.53 0-.876-.209-1.16-.64-.285-.43-.474-1.101-.545-1.948-.141-1.693.176-4.069.823-6.614a43.155 43.155 0 0 1 1.934-5.783c.348-.167.749-.31 1.192-.425zm-3.382 4.362a.216.216 0 0 1 .13.031c-.166.56-.323 1.116-.463 1.665a33.849 33.849 0 0 0-.547 2.555 3.9 3.9 0 0 0-.2-.39c-.58-1.012-.914-1.642-1.16-2.08.315-.24 1.679-1.755 2.24-1.781zm13.394.01c.562.027 1.926 1.543 2.24 1.783-.246.438-.58 1.068-1.16 2.08a4.428 4.428 0 0 0-.163.309 32.354 32.354 0 0 0-.562-2.49 40.579 40.579 0 0 0-.482-1.652.216.216 0 0 1 .127-.03z"/></svg>Java</span><span class="lg" style="--c:#6DB33F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.693 10.7058-4.73-8.1844c-.4094-.7106-1.4166-1.2942-2.2402-1.2942H7.2725c-.819 0-1.8308.5836-2.2402 1.2942L.307 10.7058c-.4095.7106-.4095 1.873 0 2.5837l4.7252 8.189c.4094.7107 1.4166 1.2943 2.2402 1.2943h9.455c.819 0 1.826-.5836 2.2402-1.2942l4.7252-8.189c.4095-.7107.4095-1.8732 0-2.5838zM10.9763 5.7547c0-.5365.4377-.9742.9742-.9742s.9742.4377.9742.9742v5.8217c0 .5366-.4377.9742-.9742.9742s-.9742-.4376-.9742-.9742zm.9742 12.4294c-3.6427 0-6.6077-2.965-6.6077-6.6077.0047-2.0896.993-4.0521 2.6685-5.304a.8657.8657 0 0 1 1.2142.1788.8657.8657 0 0 1-.1788 1.2143c-2.1602 1.6048-2.612 4.6592-1.0072 6.8194 1.6049 2.1603 4.6593 2.612 6.8195 1.0072 1.2378-.9177 1.9673-2.372 1.9673-3.9157a4.8972 4.8972 0 0 0-1.9861-3.925c-.386-.2824-.466-.8284-.1836-1.2143.2824-.386.8283-.466 1.2143-.1835 1.6895 1.2471 2.6826 3.2238 2.6873 5.3228 0 3.6474-2.965 6.6077-6.6077 6.6077z"/></svg>Spring Boot</span><span class="lg" style="--c:#149ECA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg>React</span><span class="lg" style="--c:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg>PostgreSQL</span><span class="lg" style="--c:#F05032"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>Git</span><span class="lg" style="--c:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span><span class="lg" style="--c:#2496ED"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>Docker</span><span class="lg" style="--c:#2088FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z"/></svg>GitHub Actions</span><span class="lg" style="--c:#25A162"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.886 9.769c1.647 0 2.95.436 3.912 1.307.961.872 1.442 2.06 1.442 3.566 0 1.744-.548 3.107-1.643 4.09-1.088.977-2.638 1.465-4.65 1.465-1.826 0-3.26-.294-4.303-.883v-2.38a7.89 7.89 0 002.079.793c.782.186 1.509.28 2.18.28 1.184 0 2.086-.265 2.704-.794.619-.53.928-1.304.928-2.325 0-1.952-1.245-2.929-3.733-2.929-.35 0-.783.038-1.297.112-.514.067-.965.145-1.352.235l-1.174-.693.626-7.98H16.1v2.335H9.919l-.37 4.046c.262-.044.578-.096.95-.156.38-.06.843-.09 1.387-.09zM12 0C5.373 0 0 5.373 0 12a11.998 11.998 0 006.65 10.738v-3.675h.138c.01.004 4.86 2.466 8.021 0 3.163-2.468 1.62-5.785 1.08-6.557-.54-.771-3.317-2.083-5.708-1.851-2.391.231-2.391.308-2.391.308l.617-7.096 7.687-.074V.744A12 12 0 0011.999 0zm4.095.744V3.793l-7.688.074-.617 7.096s0-.077 2.391-.308c2.392-.232 5.169 1.08 5.708 1.851.54.772 2.083 4.089-1.08 6.557-3.16 2.467-8.013.004-8.02 0h-.14v3.675A12 12 0 0012 24c6.628 0 12-5.373 12-12A12.007 12.007 0 0016.35.83c-.085-.03-.17-.059-.255-.086zM6.299 22.556z"/></svg>JUnit 5</span><span class="lg" style="--c:#FE315D"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0v24h24V0zm3.723 3.111h5v1.834h-1.39v6.277h1.39v1.834h-5v-1.834h1.444V4.945H3.723zm11.055 0H17v6.5c0 .612-.055 1.111-.222 1.556-.167.444-.39.777-.723 1.11-.277.279-.666.557-1.11.668a3.933 3.933 0 0 1-1.445.278c-.778 0-1.444-.167-1.944-.445a4.81 4.81 0 0 1-1.279-1.056l1.39-1.555c.277.334.555.555.833.722.277.167.611.278.945.278.389 0 .721-.111 1-.389.221-.278.333-.667.333-1.278zM2.222 19.5h9V21h-9z"/></svg>IntelliJ IDEA</span><span class="lg" style="--c:#FF6C37"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.527.099C6.955-.744.942 3.9.099 10.473c-.843 6.572 3.8 12.584 10.373 13.428 6.573.843 12.587-3.801 13.428-10.374C24.744 6.955 20.101.943 13.527.099zm2.471 7.485a.855.855 0 0 0-.593.25l-4.453 4.453-.307-.307-.643-.643c4.389-4.376 5.18-4.418 5.996-3.753zm-4.863 4.861l4.44-4.44a.62.62 0 1 1 .847.903l-4.699 4.125-.588-.588zm.33.694l-1.1.238a.06.06 0 0 1-.067-.032.06.06 0 0 1 .01-.073l.645-.645.512.512zm-2.803-.459l1.172-1.172.879.878-1.979.426a.074.074 0 0 1-.085-.039.072.072 0 0 1 .013-.093zm-3.646 6.058a.076.076 0 0 1-.069-.083.077.077 0 0 1 .022-.046h.002l.946-.946 1.222 1.222-2.123-.147zm2.425-1.256a.228.228 0 0 0-.117.256l.203.865a.125.125 0 0 1-.211.117h-.003l-.934-.934-.294-.295 3.762-3.758 1.82-.393.874.874c-1.255 1.102-2.971 2.201-5.1 3.268zm5.279-3.428h-.002l-.839-.839 4.699-4.125a.952.952 0 0 0 .119-.127c-.148 1.345-2.029 3.245-3.977 5.091zm3.657-6.46l-.003-.002a1.822 1.822 0 0 1 2.459-2.684l-1.61 1.613a.119.119 0 0 0 0 .169l1.247 1.247a1.817 1.817 0 0 1-2.093-.343zm2.578 0a1.714 1.714 0 0 1-.271.218h-.001l-1.207-1.207 1.533-1.533c.661.72.637 1.832-.054 2.522zM18.855 6.05a.143.143 0 0 0-.053.157.416.416 0 0 1-.053.45.14.14 0 0 0 .023.197.141.141 0 0 0 .084.03.14.14 0 0 0 .106-.05.691.691 0 0 0 .087-.751.138.138 0 0 0-.194-.033z"/></svg>Postman</span><span class="lg" style="--c:#8957E5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.922 16.997C23.061 18.492 18.063 22.02 12 22.02 5.937 22.02.939 18.492.078 16.997A.641.641 0 0 1 0 16.741v-2.869a.883.883 0 0 1 .053-.22c.372-.935 1.347-2.292 2.605-2.656.167-.429.414-1.055.644-1.517a10.098 10.098 0 0 1-.052-1.086c0-1.331.282-2.499 1.132-3.368.397-.406.89-.717 1.474-.952C7.255 2.937 9.248 1.98 11.978 1.98c2.731 0 4.767.957 6.166 2.093.584.235 1.077.546 1.474.952.85.869 1.132 2.037 1.132 3.368 0 .368-.014.733-.052 1.086.23.462.477 1.088.644 1.517 1.258.364 2.233 1.721 2.605 2.656a.841.841 0 0 1 .053.22v2.869a.641.641 0 0 1-.078.256Zm-11.75-5.992h-.344a4.359 4.359 0 0 1-.355.508c-.77.947-1.918 1.492-3.508 1.492-1.725 0-2.989-.359-3.782-1.259a2.137 2.137 0 0 1-.085-.104L4 11.746v6.585c1.435.779 4.514 2.179 8 2.179 3.486 0 6.565-1.4 8-2.179v-6.585l-.098-.104s-.033.045-.085.104c-.793.9-2.057 1.259-3.782 1.259-1.59 0-2.738-.545-3.508-1.492a4.359 4.359 0 0 1-.355-.508Zm2.328 3.25c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm-5 0c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm3.313-6.185c.136 1.057.403 1.913.878 2.497.442.544 1.134.938 2.344.938 1.573 0 2.292-.337 2.657-.751.384-.435.558-1.15.558-2.361 0-1.14-.243-1.847-.705-2.319-.477-.488-1.319-.862-2.824-1.025-1.487-.161-2.192.138-2.533.529-.269.307-.437.808-.438 1.578v.021c0 .265.021.562.063.893Zm-1.626 0c.042-.331.063-.628.063-.894v-.02c-.001-.77-.169-1.271-.438-1.578-.341-.391-1.046-.69-2.533-.529-1.505.163-2.347.537-2.824 1.025-.462.472-.705 1.179-.705 2.319 0 1.211.175 1.926.558 2.361.365.414 1.084.751 2.657.751 1.21 0 1.902-.394 2.344-.938.475-.584.742-1.44.878-2.497Z"/></svg>GitHub Copilot</span><span class="lg" style="--c:#10A37F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>ChatGPT</span><span class="lg" aria-hidden="true" style="--c:#ED8B00"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.915 0 11.7.215C9.515 2.4 7.47 6.39 6.046 10.483c-1.064 1.024-3.633 2.81-3.711 3.551-.093.87 1.746 2.611 1.55 3.235-.198.625-1.304 1.408-1.014 1.939.1.188.823.011 1.277-.491a13.389 13.389 0 0 0-.017 2.14c.076.906.27 1.668.643 2.232.372.563.956.911 1.667.911.397 0 .727-.114 1.024-.264.298-.149.571-.33.91-.5.68-.34 1.634-.666 3.53-.604 1.903.062 2.872.39 3.559.704.687.314 1.15.664 1.925.664.767 0 1.395-.336 1.807-.9.412-.563.631-1.33.72-2.24.06-.623.055-1.32 0-2.066.454.45 1.117.604 1.213.424.29-.53-.816-1.314-1.013-1.937-.198-.624 1.642-2.366 1.549-3.236-.08-.748-2.707-2.568-3.748-3.586C16.428 6.374 14.308 2.394 12.13.215zm.175 6.038a2.95 2.95 0 0 1 2.943 2.942 2.95 2.95 0 0 1-2.943 2.943A2.95 2.95 0 0 1 9.148 8.98a2.95 2.95 0 0 1 2.942-2.942zM8.685 7.983a3.515 3.515 0 0 0-.145.997c0 1.951 1.6 3.55 3.55 3.55 1.95 0 3.55-1.598 3.55-3.55 0-.329-.046-.648-.132-.951.334.095.64.208.915.336a42.699 42.699 0 0 1 2.042 5.829c.678 2.545 1.01 4.92.846 6.607-.082.844-.29 1.51-.606 1.94-.315.431-.713.651-1.315.651-.593 0-.932-.27-1.673-.61-.741-.338-1.825-.694-3.792-.758-1.974-.064-3.073.293-3.821.669-.375.188-.659.373-.911.5s-.466.2-.752.2c-.53 0-.876-.209-1.16-.64-.285-.43-.474-1.101-.545-1.948-.141-1.693.176-4.069.823-6.614a43.155 43.155 0 0 1 1.934-5.783c.348-.167.749-.31 1.192-.425zm-3.382 4.362a.216.216 0 0 1 .13.031c-.166.56-.323 1.116-.463 1.665a33.849 33.849 0 0 0-.547 2.555 3.9 3.9 0 0 0-.2-.39c-.58-1.012-.914-1.642-1.16-2.08.315-.24 1.679-1.755 2.24-1.781zm13.394.01c.562.027 1.926 1.543 2.24 1.783-.246.438-.58 1.068-1.16 2.08a4.428 4.428 0 0 0-.163.309 32.354 32.354 0 0 0-.562-2.49 40.579 40.579 0 0 0-.482-1.652.216.216 0 0 1 .127-.03z"/></svg>Java</span><span class="lg" aria-hidden="true" style="--c:#6DB33F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m23.693 10.7058-4.73-8.1844c-.4094-.7106-1.4166-1.2942-2.2402-1.2942H7.2725c-.819 0-1.8308.5836-2.2402 1.2942L.307 10.7058c-.4095.7106-.4095 1.873 0 2.5837l4.7252 8.189c.4094.7107 1.4166 1.2943 2.2402 1.2943h9.455c.819 0 1.826-.5836 2.2402-1.2942l4.7252-8.189c.4095-.7107.4095-1.8732 0-2.5838zM10.9763 5.7547c0-.5365.4377-.9742.9742-.9742s.9742.4377.9742.9742v5.8217c0 .5366-.4377.9742-.9742.9742s-.9742-.4376-.9742-.9742zm.9742 12.4294c-3.6427 0-6.6077-2.965-6.6077-6.6077.0047-2.0896.993-4.0521 2.6685-5.304a.8657.8657 0 0 1 1.2142.1788.8657.8657 0 0 1-.1788 1.2143c-2.1602 1.6048-2.612 4.6592-1.0072 6.8194 1.6049 2.1603 4.6593 2.612 6.8195 1.0072 1.2378-.9177 1.9673-2.372 1.9673-3.9157a4.8972 4.8972 0 0 0-1.9861-3.925c-.386-.2824-.466-.8284-.1836-1.2143.2824-.386.8283-.466 1.2143-.1835 1.6895 1.2471 2.6826 3.2238 2.6873 5.3228 0 3.6474-2.965 6.6077-6.6077 6.6077z"/></svg>Spring Boot</span><span class="lg" aria-hidden="true" style="--c:#149ECA"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.23 12.004a2.236 2.236 0 0 1-2.235 2.236 2.236 2.236 0 0 1-2.236-2.236 2.236 2.236 0 0 1 2.235-2.236 2.236 2.236 0 0 1 2.236 2.236zm2.648-10.69c-1.346 0-3.107.96-4.888 2.622-1.78-1.653-3.542-2.602-4.887-2.602-.41 0-.783.093-1.106.278-1.375.793-1.683 3.264-.973 6.365C1.98 8.917 0 10.42 0 12.004c0 1.59 1.99 3.097 5.043 4.03-.704 3.113-.39 5.588.988 6.38.32.187.69.275 1.102.275 1.345 0 3.107-.96 4.888-2.624 1.78 1.654 3.542 2.603 4.887 2.603.41 0 .783-.09 1.106-.275 1.374-.792 1.683-3.263.973-6.365C22.02 15.096 24 13.59 24 12.004c0-1.59-1.99-3.097-5.043-4.032.704-3.11.39-5.587-.988-6.38-.318-.184-.688-.277-1.092-.278zm-.005 1.09v.006c.225 0 .406.044.558.127.666.382.955 1.835.73 3.704-.054.46-.142.945-.25 1.44-.96-.236-2.006-.417-3.107-.534-.66-.905-1.345-1.727-2.035-2.447 1.592-1.48 3.087-2.292 4.105-2.295zm-9.77.02c1.012 0 2.514.808 4.11 2.28-.686.72-1.37 1.537-2.02 2.442-1.107.117-2.154.298-3.113.538-.112-.49-.195-.964-.254-1.42-.23-1.868.054-3.32.714-3.707.19-.09.4-.127.563-.132zm4.882 3.05c.455.468.91.992 1.36 1.564-.44-.02-.89-.034-1.345-.034-.46 0-.915.01-1.36.034.44-.572.895-1.096 1.345-1.565zM12 8.1c.74 0 1.477.034 2.202.093.406.582.802 1.203 1.183 1.86.372.64.71 1.29 1.018 1.946-.308.655-.646 1.31-1.013 1.95-.38.66-.773 1.288-1.18 1.87-.728.063-1.466.098-2.21.098-.74 0-1.477-.035-2.202-.093-.406-.582-.802-1.204-1.183-1.86-.372-.64-.71-1.29-1.018-1.946.303-.657.646-1.313 1.013-1.954.38-.66.773-1.286 1.18-1.868.728-.064 1.466-.098 2.21-.098zm-3.635.254c-.24.377-.48.763-.704 1.16-.225.39-.435.782-.635 1.174-.265-.656-.49-1.31-.676-1.947.64-.15 1.315-.283 2.015-.386zm7.26 0c.695.103 1.365.23 2.006.387-.18.632-.405 1.282-.66 1.933-.2-.39-.41-.783-.64-1.174-.225-.392-.465-.774-.705-1.146zm3.063.675c.484.15.944.317 1.375.498 1.732.74 2.852 1.708 2.852 2.476-.005.768-1.125 1.74-2.857 2.475-.42.18-.88.342-1.355.493-.28-.958-.646-1.956-1.1-2.98.45-1.017.81-2.01 1.085-2.964zm-13.395.004c.278.96.645 1.957 1.1 2.98-.45 1.017-.812 2.01-1.086 2.964-.484-.15-.944-.318-1.37-.5-1.732-.737-2.852-1.706-2.852-2.474 0-.768 1.12-1.742 2.852-2.476.42-.18.88-.342 1.356-.494zm11.678 4.28c.265.657.49 1.312.676 1.948-.64.157-1.316.29-2.016.39.24-.375.48-.762.705-1.158.225-.39.435-.788.636-1.18zm-9.945.02c.2.392.41.783.64 1.175.23.39.465.772.705 1.143-.695-.102-1.365-.23-2.006-.386.18-.63.406-1.282.66-1.933zM17.92 16.32c.112.493.2.968.254 1.423.23 1.868-.054 3.32-.714 3.708-.147.09-.338.128-.563.128-1.012 0-2.514-.807-4.11-2.28.686-.72 1.37-1.536 2.02-2.44 1.107-.118 2.154-.3 3.113-.54zm-11.83.01c.96.234 2.006.415 3.107.532.66.905 1.345 1.727 2.035 2.446-1.595 1.483-3.092 2.295-4.11 2.295-.22-.005-.406-.05-.553-.132-.666-.38-.955-1.834-.73-3.703.054-.46.142-.944.25-1.438zm4.56.64c.44.02.89.034 1.345.034.46 0 .915-.01 1.36-.034-.44.572-.895 1.095-1.345 1.565-.455-.47-.91-.993-1.36-1.565z"/></svg>React</span><span class="lg" aria-hidden="true" style="--c:#4169E1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.5594 14.7228a.5269.5269 0 0 0-.0563-.1191c-.139-.2632-.4768-.3418-1.0074-.2321-1.6533.3411-2.2935.1312-2.5256-.0191 1.342-2.0482 2.445-4.522 3.0411-6.8297.2714-1.0507.7982-3.5237.1222-4.7316a1.5641 1.5641 0 0 0-.1509-.235C21.6931.9086 19.8007.0248 17.5099.0005c-1.4947-.0158-2.7705.3461-3.1161.4794a9.449 9.449 0 0 0-.5159-.0816 8.044 8.044 0 0 0-1.3114-.1278c-1.1822-.0184-2.2038.2642-3.0498.8406-.8573-.3211-4.7888-1.645-7.2219.0788C.9359 2.1526.3086 3.8733.4302 6.3043c.0409.818.5069 3.334 1.2423 5.7436.4598 1.5065.9387 2.7019 1.4334 3.582.553.9942 1.1259 1.5933 1.7143 1.7895.4474.1491 1.1327.1441 1.8581-.7279.8012-.9635 1.5903-1.8258 1.9446-2.2069.4351.2355.9064.3625 1.39.3772a.0569.0569 0 0 0 .0004.0041 11.0312 11.0312 0 0 0-.2472.3054c-.3389.4302-.4094.5197-1.5002.7443-.3102.064-1.1344.2339-1.1464.8115-.0025.1224.0329.2309.0919.3268.2269.4231.9216.6097 1.015.6331 1.3345.3335 2.5044.092 3.3714-.6787-.017 2.231.0775 4.4174.3454 5.0874.2212.5529.7618 1.9045 2.4692 1.9043.2505 0 .5263-.0291.8296-.0941 1.7819-.3821 2.5557-1.1696 2.855-2.9059.1503-.8707.4016-2.8753.5388-4.1012.0169-.0703.0357-.1207.057-.1362.0007-.0005.0697-.0471.4272.0307a.3673.3673 0 0 0 .0443.0068l.2539.0223.0149.001c.8468.0384 1.9114-.1426 2.5312-.4308.6438-.2988 1.8057-1.0323 1.5951-1.6698zM2.371 11.8765c-.7435-2.4358-1.1779-4.8851-1.2123-5.5719-.1086-2.1714.4171-3.6829 1.5623-4.4927 1.8367-1.2986 4.8398-.5408 6.108-.13-.0032.0032-.0066.0061-.0098.0094-2.0238 2.044-1.9758 5.536-1.9708 5.7495-.0002.0823.0066.1989.0162.3593.0348.5873.0996 1.6804-.0735 2.9184-.1609 1.1504.1937 2.2764.9728 3.0892.0806.0841.1648.1631.2518.2374-.3468.3714-1.1004 1.1926-1.9025 2.1576-.5677.6825-.9597.5517-1.0886.5087-.3919-.1307-.813-.5871-1.2381-1.3223-.4796-.839-.9635-2.0317-1.4155-3.5126zm6.0072 5.0871c-.1711-.0428-.3271-.1132-.4322-.1772.0889-.0394.2374-.0902.4833-.1409 1.2833-.2641 1.4815-.4506 1.9143-1.0002.0992-.126.2116-.2687.3673-.4426a.3549.3549 0 0 0 .0737-.1298c.1708-.1513.2724-.1099.4369-.0417.156.0646.3078.26.3695.4752.0291.1016.0619.2945-.0452.4444-.9043 1.2658-2.2216 1.2494-3.1676 1.0128zm2.094-3.988-.0525.141c-.133.3566-.2567.6881-.3334 1.003-.6674-.0021-1.3168-.2872-1.8105-.8024-.6279-.6551-.9131-1.5664-.7825-2.5004.1828-1.3079.1153-2.4468.079-3.0586-.005-.0857-.0095-.1607-.0122-.2199.2957-.2621 1.6659-.9962 2.6429-.7724.4459.1022.7176.4057.8305.928.5846 2.7038.0774 3.8307-.3302 4.7363-.084.1866-.1633.3629-.2311.5454zm7.3637 4.5725c-.0169.1768-.0358.376-.0618.5959l-.146.4383a.3547.3547 0 0 0-.0182.1077c-.0059.4747-.054.6489-.115.8693-.0634.2292-.1353.4891-.1794 1.0575-.11 1.4143-.8782 2.2267-2.4172 2.5565-1.5155.3251-1.7843-.4968-2.0212-1.2217a6.5824 6.5824 0 0 0-.0769-.2266c-.2154-.5858-.1911-1.4119-.1574-2.5551.0165-.5612-.0249-1.9013-.3302-2.6462.0044-.2932.0106-.5909.019-.8918a.3529.3529 0 0 0-.0153-.1126 1.4927 1.4927 0 0 0-.0439-.208c-.1226-.4283-.4213-.7866-.7797-.9351-.1424-.059-.4038-.1672-.7178-.0869.067-.276.1831-.5875.309-.9249l.0529-.142c.0595-.16.134-.3257.213-.5012.4265-.9476 1.0106-2.2453.3766-5.1772-.2374-1.0981-1.0304-1.6343-2.2324-1.5098-.7207.0746-1.3799.3654-1.7088.5321a5.6716 5.6716 0 0 0-.1958.1041c.0918-1.1064.4386-3.1741 1.7357-4.4823a4.0306 4.0306 0 0 1 .3033-.276.3532.3532 0 0 0 .1447-.0644c.7524-.5706 1.6945-.8506 2.802-.8325.4091.0067.8017.0339 1.1742.081 1.939.3544 3.2439 1.4468 4.0359 2.3827.8143.9623 1.2552 1.9315 1.4312 2.4543-1.3232-.1346-2.2234.1268-2.6797.779-.9926 1.4189.543 4.1729 1.2811 5.4964.1353.2426.2522.4522.2889.5413.2403.5825.5515.9713.7787 1.2552.0696.087.1372.1714.1885.245-.4008.1155-1.1208.3825-1.0552 1.717-.0123.1563-.0423.4469-.0834.8148-.0461.2077-.0702.4603-.0994.7662zm.8905-1.6211c-.0405-.8316.2691-.9185.5967-1.0105a2.8566 2.8566 0 0 0 .135-.0406 1.202 1.202 0 0 0 .1342.103c.5703.3765 1.5823.4213 3.0068.1344-.2016.1769-.5189.3994-.9533.6011-.4098.1903-1.0957.333-1.7473.3636-.7197.0336-1.0859-.0807-1.1721-.151zm.5695-9.2712c-.0059.3508-.0542.6692-.1054 1.0017-.055.3576-.112.7274-.1264 1.1762-.0142.4368.0404.8909.0932 1.3301.1066.887.216 1.8003-.2075 2.7014a3.5272 3.5272 0 0 1-.1876-.3856c-.0527-.1276-.1669-.3326-.3251-.6162-.6156-1.1041-2.0574-3.6896-1.3193-4.7446.3795-.5427 1.3408-.5661 2.1781-.463zm.2284 7.0137a12.3762 12.3762 0 0 0-.0853-.1074l-.0355-.0444c.7262-1.1995.5842-2.3862.4578-3.4385-.0519-.4318-.1009-.8396-.0885-1.2226.0129-.4061.0666-.7543.1185-1.0911.0639-.415.1288-.8443.1109-1.3505.0134-.0531.0188-.1158.0118-.1902-.0457-.4855-.5999-1.938-1.7294-3.253-.6076-.7073-1.4896-1.4972-2.6889-2.0395.5251-.1066 1.2328-.2035 2.0244-.1859 2.0515.0456 3.6746.8135 4.8242 2.2824a.908.908 0 0 1 .0667.1002c.7231 1.3556-.2762 6.2751-2.9867 10.5405zm-8.8166-6.1162c-.025.1794-.3089.4225-.6211.4225a.5821.5821 0 0 1-.0809-.0056c-.1873-.026-.3765-.144-.5059-.3156-.0458-.0605-.1203-.178-.1055-.2844.0055-.0401.0261-.0985.0925-.1488.1182-.0894.3518-.1226.6096-.0867.3163.0441.6426.1938.6113.4186zm7.9305-.4114c.0111.0792-.049.201-.1531.3102-.0683.0717-.212.1961-.4079.2232a.5456.5456 0 0 1-.075.0052c-.2935 0-.5414-.2344-.5607-.3717-.024-.1765.2641-.3106.5611-.352.297-.0414.6111.0088.6356.1851z"/></svg>PostgreSQL</span><span class="lg" aria-hidden="true" style="--c:#F05032"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.658 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.545-.545-.676-1.342-.396-2.009L7.636 3.7.45 10.881c-.6.605-.6 1.584 0 2.189l10.48 10.477c.604.604 1.582.604 2.186 0l10.43-10.43c.605-.603.605-1.582 0-2.187"/></svg>Git</span><span class="lg" aria-hidden="true" style="--c:#181717"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub</span><span class="lg" aria-hidden="true" style="--c:#2496ED"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></svg>Docker</span><span class="lg" aria-hidden="true" style="--c:#2088FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.984 13.836a.5.5 0 0 1-.353-.146l-.745-.743a.5.5 0 1 1 .706-.708l.392.391 1.181-1.18a.5.5 0 0 1 .708.707l-1.535 1.533a.504.504 0 0 1-.354.146zm9.353-.147l1.534-1.532a.5.5 0 0 0-.707-.707l-1.181 1.18-.392-.391a.5.5 0 1 0-.706.708l.746.743a.497.497 0 0 0 .706-.001zM4.527 7.452l2.557-1.585A1 1 0 0 0 7.09 4.17L4.533 2.56A1 1 0 0 0 3 3.406v3.196a1.001 1.001 0 0 0 1.527.85zm2.03-2.436L4 6.602V3.406l2.557 1.61zM24 12.5c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3h-2.08a3.503 3.503 0 0 1-3.46 3 3.502 3.502 0 0 1-3.46-3h-.558c-.972 0-1.85-.399-2.482-1.042V17c0 1.654 1.346 3 3 3h.04c.244-1.693 1.7-3 3.46-3 1.93 0 3.5 1.57 3.5 3.5S13.43 24 11.5 24a3.502 3.502 0 0 1-3.46-3H8c-2.206 0-4-1.794-4-4V9.899A5.008 5.008 0 0 1 0 5c0-2.757 2.243-5 5-5s5 2.243 5 5a5.005 5.005 0 0 1-4.952 4.998A2.482 2.482 0 0 0 7.482 12h.558c.244-1.693 1.7-3 3.46-3a3.502 3.502 0 0 1 3.46 3h2.08a3.503 3.503 0 0 1 3.46-3c1.93 0 3.5 1.57 3.5 3.5zm-15 8c0 1.378 1.122 2.5 2.5 2.5s2.5-1.122 2.5-2.5-1.122-2.5-2.5-2.5S9 19.122 9 20.5zM5 9c2.206 0 4-1.794 4-4S7.206 1 5 1 1 2.794 1 5s1.794 4 4 4zm9 3.5c0-1.378-1.122-2.5-2.5-2.5S9 11.122 9 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm9 0c0-1.378-1.122-2.5-2.5-2.5S18 11.122 18 12.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5zm-13 8a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm2 0a.5.5 0 1 0 1 0 .5.5 0 0 0-1 0zm12 0c0 1.93-1.57 3.5-3.5 3.5a3.503 3.503 0 0 1-3.46-3.002c-.007.001-.013.005-.021.005l-.506.017h-.017a.5.5 0 0 1-.016-.999l.506-.017c.018-.002.035.006.052.007A3.503 3.503 0 0 1 20.5 17c1.93 0 3.5 1.57 3.5 3.5zm-1 0c0-1.378-1.122-2.5-2.5-2.5S18 19.122 18 20.5s1.122 2.5 2.5 2.5 2.5-1.122 2.5-2.5z"/></svg>GitHub Actions</span><span class="lg" aria-hidden="true" style="--c:#25A162"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.886 9.769c1.647 0 2.95.436 3.912 1.307.961.872 1.442 2.06 1.442 3.566 0 1.744-.548 3.107-1.643 4.09-1.088.977-2.638 1.465-4.65 1.465-1.826 0-3.26-.294-4.303-.883v-2.38a7.89 7.89 0 002.079.793c.782.186 1.509.28 2.18.28 1.184 0 2.086-.265 2.704-.794.619-.53.928-1.304.928-2.325 0-1.952-1.245-2.929-3.733-2.929-.35 0-.783.038-1.297.112-.514.067-.965.145-1.352.235l-1.174-.693.626-7.98H16.1v2.335H9.919l-.37 4.046c.262-.044.578-.096.95-.156.38-.06.843-.09 1.387-.09zM12 0C5.373 0 0 5.373 0 12a11.998 11.998 0 006.65 10.738v-3.675h.138c.01.004 4.86 2.466 8.021 0 3.163-2.468 1.62-5.785 1.08-6.557-.54-.771-3.317-2.083-5.708-1.851-2.391.231-2.391.308-2.391.308l.617-7.096 7.687-.074V.744A12 12 0 0011.999 0zm4.095.744V3.793l-7.688.074-.617 7.096s0-.077 2.391-.308c2.392-.232 5.169 1.08 5.708 1.851.54.772 2.083 4.089-1.08 6.557-3.16 2.467-8.013.004-8.02 0h-.14v3.675A12 12 0 0012 24c6.628 0 12-5.373 12-12A12.007 12.007 0 0016.35.83c-.085-.03-.17-.059-.255-.086zM6.299 22.556z"/></svg>JUnit 5</span><span class="lg" aria-hidden="true" style="--c:#FE315D"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0v24h24V0zm3.723 3.111h5v1.834h-1.39v6.277h1.39v1.834h-5v-1.834h1.444V4.945H3.723zm11.055 0H17v6.5c0 .612-.055 1.111-.222 1.556-.167.444-.39.777-.723 1.11-.277.279-.666.557-1.11.668a3.933 3.933 0 0 1-1.445.278c-.778 0-1.444-.167-1.944-.445a4.81 4.81 0 0 1-1.279-1.056l1.39-1.555c.277.334.555.555.833.722.277.167.611.278.945.278.389 0 .721-.111 1-.389.221-.278.333-.667.333-1.278zM2.222 19.5h9V21h-9z"/></svg>IntelliJ IDEA</span><span class="lg" aria-hidden="true" style="--c:#FF6C37"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.527.099C6.955-.744.942 3.9.099 10.473c-.843 6.572 3.8 12.584 10.373 13.428 6.573.843 12.587-3.801 13.428-10.374C24.744 6.955 20.101.943 13.527.099zm2.471 7.485a.855.855 0 0 0-.593.25l-4.453 4.453-.307-.307-.643-.643c4.389-4.376 5.18-4.418 5.996-3.753zm-4.863 4.861l4.44-4.44a.62.62 0 1 1 .847.903l-4.699 4.125-.588-.588zm.33.694l-1.1.238a.06.06 0 0 1-.067-.032.06.06 0 0 1 .01-.073l.645-.645.512.512zm-2.803-.459l1.172-1.172.879.878-1.979.426a.074.074 0 0 1-.085-.039.072.072 0 0 1 .013-.093zm-3.646 6.058a.076.076 0 0 1-.069-.083.077.077 0 0 1 .022-.046h.002l.946-.946 1.222 1.222-2.123-.147zm2.425-1.256a.228.228 0 0 0-.117.256l.203.865a.125.125 0 0 1-.211.117h-.003l-.934-.934-.294-.295 3.762-3.758 1.82-.393.874.874c-1.255 1.102-2.971 2.201-5.1 3.268zm5.279-3.428h-.002l-.839-.839 4.699-4.125a.952.952 0 0 0 .119-.127c-.148 1.345-2.029 3.245-3.977 5.091zm3.657-6.46l-.003-.002a1.822 1.822 0 0 1 2.459-2.684l-1.61 1.613a.119.119 0 0 0 0 .169l1.247 1.247a1.817 1.817 0 0 1-2.093-.343zm2.578 0a1.714 1.714 0 0 1-.271.218h-.001l-1.207-1.207 1.533-1.533c.661.72.637 1.832-.054 2.522zM18.855 6.05a.143.143 0 0 0-.053.157.416.416 0 0 1-.053.45.14.14 0 0 0 .023.197.141.141 0 0 0 .084.03.14.14 0 0 0 .106-.05.691.691 0 0 0 .087-.751.138.138 0 0 0-.194-.033z"/></svg>Postman</span><span class="lg" aria-hidden="true" style="--c:#8957E5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M23.922 16.997C23.061 18.492 18.063 22.02 12 22.02 5.937 22.02.939 18.492.078 16.997A.641.641 0 0 1 0 16.741v-2.869a.883.883 0 0 1 .053-.22c.372-.935 1.347-2.292 2.605-2.656.167-.429.414-1.055.644-1.517a10.098 10.098 0 0 1-.052-1.086c0-1.331.282-2.499 1.132-3.368.397-.406.89-.717 1.474-.952C7.255 2.937 9.248 1.98 11.978 1.98c2.731 0 4.767.957 6.166 2.093.584.235 1.077.546 1.474.952.85.869 1.132 2.037 1.132 3.368 0 .368-.014.733-.052 1.086.23.462.477 1.088.644 1.517 1.258.364 2.233 1.721 2.605 2.656a.841.841 0 0 1 .053.22v2.869a.641.641 0 0 1-.078.256Zm-11.75-5.992h-.344a4.359 4.359 0 0 1-.355.508c-.77.947-1.918 1.492-3.508 1.492-1.725 0-2.989-.359-3.782-1.259a2.137 2.137 0 0 1-.085-.104L4 11.746v6.585c1.435.779 4.514 2.179 8 2.179 3.486 0 6.565-1.4 8-2.179v-6.585l-.098-.104s-.033.045-.085.104c-.793.9-2.057 1.259-3.782 1.259-1.59 0-2.738-.545-3.508-1.492a4.359 4.359 0 0 1-.355-.508Zm2.328 3.25c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm-5 0c.549 0 1 .451 1 1v2c0 .549-.451 1-1 1-.549 0-1-.451-1-1v-2c0-.549.451-1 1-1Zm3.313-6.185c.136 1.057.403 1.913.878 2.497.442.544 1.134.938 2.344.938 1.573 0 2.292-.337 2.657-.751.384-.435.558-1.15.558-2.361 0-1.14-.243-1.847-.705-2.319-.477-.488-1.319-.862-2.824-1.025-1.487-.161-2.192.138-2.533.529-.269.307-.437.808-.438 1.578v.021c0 .265.021.562.063.893Zm-1.626 0c.042-.331.063-.628.063-.894v-.02c-.001-.77-.169-1.271-.438-1.578-.341-.391-1.046-.69-2.533-.529-1.505.163-2.347.537-2.824 1.025-.462.472-.705 1.179-.705 2.319 0 1.211.175 1.926.558 2.361.365.414 1.084.751 2.657.751 1.21 0 1.902-.394 2.344-.938.475-.584.742-1.44.878-2.497Z"/></svg>GitHub Copilot</span><span class="lg" aria-hidden="true" style="--c:#10A37F"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"/></svg>ChatGPT</span></div><div class="mrow r2"><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg>AI pair programming</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/></svg>Code review</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="5"/><path d="M12 8v12M3 13h4M17 13h4M5 7l3 2M19 7l-3 2M9 5l1.5 2M15 5l-1.5 2"/></svg>Debugging</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg>Testing</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Clean code</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>Team projects</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.2-4.4A8 8 0 1 1 21 12z"/></svg>Explaining your work</span><span class="hb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>Mock interviews</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg>AI pair programming</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/></svg>Code review</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="8" width="10" height="12" rx="5"/><path d="M12 8v12M3 13h4M17 13h4M5 7l3 2M19 7l-3 2M9 5l1.5 2M15 5l-1.5 2"/></svg>Debugging</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/></svg>Testing</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>Clean code</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg>Team projects</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.2-4.4A8 8 0 1 1 21 12z"/></svg>Explaining your work</span><span class="hb" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>Mock interviews</span></div></div>
+  </section>
+
+  <!-- WHY -->
+  <section class="block" id="why">
+    <div class="wrap">
+      <div class="sh reveal">
+        <h2 class="title">College taught you syntax. Interviews ask what you've built.</h2>
+      </div>
+      <div class="wa3 reveal">
+        <article><p class="wq">“I know the basics, but I freeze when I have to build something real.”</p><h3>Four projects you ship</h3><p>From a Java app to a deployed full stack product.</p></article>
+        <article><p class="wq">“Everyone says use AI to code. I don't know how teams actually do it.”</p><h3>AI taught every week</h3><p>Prompt it, check it, fix it, explain it.</p></article>
+        <article><p class="wq">“I apply everywhere and never hear back.”</p><h3>Proof, then introductions</h3><p>A Readiness Profile and Xcela's client companies.</p></article>
+      </div>
+
+      <div class="compare reveal" role="table" aria-label="TeXcela compared with a typical course">
+        <div class="c-row c-head" role="row"><span role="columnheader"><span class="sr">Topic</span></span><span role="columnheader">A typical course</span><span role="columnheader" class="c-tx"><span class="sr">TeXcela</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -2 789.7 211.0" class="wm" aria-hidden="true" focusable="false"><g transform="translate(0.00 10.00) scale(2.12857) translate(-14 -34)"><rect x="14" y="34" width="66" height="17" rx="3" fill="currentColor"/><rect x="38.5" y="34" width="17" height="70" rx="3" fill="currentColor"/></g><path d="M192.0857142857143 161.4Q174.6857142857143 161.4 161.8857142857143 153.7Q149.0857142857143 146.0 142.0857142857143 133.0Q135.0857142857143 120.0 135.0857142857143 104.19999999999999Q135.0857142857143 87.8 142.3857142857143 75.0Q149.6857142857143 62.19999999999999 162.0857142857143 54.79999999999999Q174.4857142857143 47.39999999999999 190.0857142857143 47.39999999999999Q203.0857142857143 47.39999999999999 213.0857142857143 51.49999999999999Q223.0857142857143 55.599999999999994 229.9857142857143 62.99999999999999Q236.8857142857143 70.39999999999999 240.4857142857143 80.1Q244.0857142857143 89.8 244.0857142857143 101.19999999999999Q244.0857142857143 104.4 243.78571428571428 107.5Q243.4857142857143 110.6 242.6857142857143 112.8H166.2857142857143Q166.6857142857143 117.0 168.2857142857143 120.6Q171.2857142857143 127.6 177.48571428571432 131.5Q183.6857142857143 135.4 192.4857142857143 135.4Q200.4857142857143 135.4 206.1857142857143 132.2Q211.8857142857143 129.0 215.0857142857143 123.4L239.0857142857143 134.8Q235.8857142857143 142.8 228.9857142857143 148.8Q222.0857142857143 154.8 212.68571428571428 158.10000000000002Q203.28571428571428 161.4 192.0857142857143 161.4ZM166.8857142857143 90.8H212.2857142857143Q212.0857142857143 88.2 211.2857142857143 85.8Q209.0857142857143 79.19999999999999 203.5857142857143 75.29999999999998Q198.0857142857143 71.39999999999999 190.0857142857143 71.39999999999999Q182.2857142857143 71.39999999999999 176.6857142857143 75.19999999999999Q171.0857142857143 79.0 168.2857142857143 86.39999999999999Q167.4857142857143 88.39999999999999 166.8857142857143 90.8Z" fill="currentColor"/><path d="M264.45 30.76 L371.92 138.24 M371.92 30.76 L264.45 138.24" class="wx" stroke-width="41.52" stroke-linecap="round" fill="none"/><path d="M460.28571428571433 161.4Q443.8857142857143 161.4 430.78571428571433 153.9Q417.6857142857143 146.4 409.9857142857143 133.4Q402.28571428571433 120.4 402.28571428571433 104.19999999999999Q402.28571428571433 88.0 409.88571428571436 75.1Q417.4857142857143 62.19999999999999 430.6857142857143 54.79999999999999Q443.8857142857143 47.39999999999999 460.28571428571433 47.39999999999999Q472.4857142857143 47.39999999999999 482.88571428571436 51.599999999999994Q493.28571428571433 55.8 500.6857142857143 63.3Q508.0857142857143 70.8 511.28571428571433 81.0L485.28571428571433 92.2Q482.4857142857143 84.0 475.78571428571433 79.19999999999999Q469.0857142857143 74.39999999999999 460.28571428571433 74.39999999999999Q452.4857142857143 74.39999999999999 446.38571428571436 78.19999999999999Q440.28571428571433 82.0 436.78571428571433 88.8Q433.28571428571433 95.6 433.28571428571433 104.4Q433.28571428571433 113.19999999999999 436.78571428571433 120.0Q440.28571428571433 126.8 446.38571428571436 130.6Q452.4857142857143 134.4 460.28571428571433 134.4Q469.28571428571433 134.4 475.88571428571436 129.6Q482.4857142857143 124.8 485.28571428571433 116.6L511.28571428571433 128.0Q508.28571428571433 137.6 500.88571428571436 145.2Q493.4857142857143 152.8 483.0857142857143 157.10000000000002Q472.6857142857143 161.4 460.28571428571433 161.4Z" fill="currentColor"/><path d="M572.4857142857143 161.4Q555.0857142857143 161.4 542.2857142857142 153.7Q529.4857142857143 146.0 522.4857142857143 133.0Q515.4857142857143 120.0 515.4857142857143 104.19999999999999Q515.4857142857143 87.8 522.7857142857142 75.0Q530.0857142857143 62.19999999999999 542.4857142857143 54.79999999999999Q554.8857142857144 47.39999999999999 570.4857142857143 47.39999999999999Q583.4857142857143 47.39999999999999 593.4857142857143 51.49999999999999Q603.4857142857143 55.599999999999994 610.3857142857144 62.99999999999999Q617.2857142857143 70.39999999999999 620.8857142857144 80.1Q624.4857142857143 89.8 624.4857142857143 101.19999999999999Q624.4857142857143 104.4 624.1857142857143 107.5Q623.8857142857144 110.6 623.0857142857143 112.8H546.6857142857143Q547.0857142857143 117.0 548.6857142857143 120.6Q551.6857142857143 127.6 557.8857142857144 131.5Q564.0857142857143 135.4 572.8857142857144 135.4Q580.8857142857144 135.4 586.5857142857144 132.2Q592.2857142857143 129.0 595.4857142857143 123.4L619.4857142857143 134.8Q616.2857142857143 142.8 609.3857142857144 148.8Q602.4857142857143 154.8 593.0857142857143 158.10000000000002Q583.6857142857143 161.4 572.4857142857143 161.4ZM547.2857142857143 90.8H592.6857142857143Q592.4857142857143 88.2 591.6857142857143 85.8Q589.4857142857143 79.19999999999999 583.9857142857143 75.29999999999998Q578.4857142857143 71.39999999999999 570.4857142857143 71.39999999999999Q562.6857142857143 71.39999999999999 557.0857142857143 75.19999999999999Q551.4857142857143 79.0 548.6857142857143 86.39999999999999Q547.8857142857144 88.39999999999999 547.2857142857143 90.8Z" fill="currentColor"/><path d="M633.0857142857143 159.0V7.599999999999994H663.0857142857143V159.0Z" fill="currentColor"/><path d="M709.8857142857142 161.4Q698.0857142857143 161.4 689.4857142857143 157.60000000000002Q680.8857142857142 153.8 676.2857142857142 146.7Q671.6857142857143 139.6 671.6857142857143 129.8Q671.6857142857143 120.6 675.8857142857144 113.5Q680.0857142857143 106.4 688.7857142857142 101.6Q697.4857142857143 96.8 710.4857142857143 94.8L740.6857142857143 90.0V87.0Q740.6857142857143 80.8 735.7857142857142 76.6Q730.8857142857142 72.39999999999999 722.4857142857143 72.39999999999999Q714.4857142857143 72.39999999999999 708.3857142857144 76.79999999999998Q702.2857142857143 81.19999999999999 699.4857142857143 88.39999999999999L675.4857142857143 77.0Q678.6857142857143 67.8 685.6857142857143 61.199999999999996Q692.6857142857143 54.599999999999994 702.4857142857143 50.99999999999999Q712.2857142857143 47.39999999999999 723.8857142857142 47.39999999999999Q737.6857142857143 47.39999999999999 748.2857142857143 52.39999999999999Q758.8857142857144 57.39999999999999 764.7857142857143 66.29999999999998Q770.6857142857143 75.19999999999999 770.6857142857143 87.0V159.0H742.6857142857143V148.6Q740.8857142857142 150.6 738.8857142857142 152.0Q733.0857142857143 156.8 725.8857142857144 159.10000000000002Q718.6857142857143 161.4 709.8857142857142 161.4ZM740.6857142857143 112.0 715.8857142857142 116.4Q709.4857142857143 117.6 706.0857142857143 120.5Q702.6857142857143 123.4 702.6857142857143 128.8Q702.6857142857143 133.8 706.4857142857143 136.60000000000002Q710.2857142857143 139.4 715.8857142857142 139.4Q723.2857142857143 139.4 728.8857142857144 136.2Q734.4857142857143 133.0 737.5857142857143 127.5Q740.6857142857143 122.0 740.6857142857143 115.4Z" fill="currentColor"/></svg></span></div>
+        <div class="c-row" role="row"><span role="rowheader">Batch size</span><span role="cell">60 or more learners</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>35 to 40, with one lead trainer</span></div>
+        <div class="c-row" role="row"><span role="rowheader">What you learn</span><span role="cell">Older topics such as Servlets and JSP</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Java 21, Spring Boot 4, testing, CI and React, with AI built in</span></div>
+        <div class="c-row" role="row"><span role="rowheader">Placement</span><span role="cell">A vague "network of companies"</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Xcela, a recruiter, introduces you to its own clients</span></div>
+        <div class="c-row" role="row"><span role="rowheader">AI</span><span role="cell">Banned, or left to you</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Taught, used and checked every week</span></div>
+        <div class="c-row" role="row"><span role="rowheader">Results</span><span role="cell">Hand-picked success stories</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Every learner's outcome published, not just the best</span></div>
+      </div>
     </div>
   </section>
 
   <!-- PROGRAMME SHOWCASE -->
-  <section class="showcase" id="programme" aria-label="The programme">
+  <section class="block showcase" id="programme" aria-label="The programme">
     <div class="wrap">
       <div class="sh reveal">
-        <h2 class="title">Code with AI from week one.</h2>
-        <p class="sh-p">Learn when to trust it, when to check it and when to switch it off. Every milestone ends with something you built and can explain.</p>
+        <h2 class="title">16 weeks. Four things you'll ship.</h2>
       </div>
       <div class="panel tabs-panel reveal" id="tabs">
         <div class="tablist" role="tablist" aria-label="Four milestones">
@@ -731,8 +997,8 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <div class="pane on" role="tabpanel" id="p1" aria-labelledby="t1">
             <div class="pane-cap">
               <h3>Java, problem solving and SQL</h3>
-              <p>Write clean Java, solve interview-style problems and design a database. You learn when to use AI and when to work without it: checkpoint tests are taken without AI, then defended live.</p>
-              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: your skill check results and a first Readiness Profile</span></p>
+              <p>Write clean Java, solve interview-style problems and design a real database.</p>
+              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: your first Readiness Profile</span></p>
             </div>
             <div class="stage field f1" aria-hidden="true">
               <div class="mock chat">
@@ -753,7 +1019,7 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <div class="pane" role="tabpanel" id="p2" aria-labelledby="t2" hidden>
             <div class="pane-cap">
               <h3>Your own backend API</h3>
-              <p>Build a REST API with Spring Boot, a real database, login and security, plus tests that run on GitHub. At Saturday labs you pair with a classmate and an AI assistant, and a mentor reviews every pull request.</p>
+              <p>Build a REST API with Spring Boot, a database, login and tests on GitHub. A mentor reviews every pull request.</p>
               <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: a secured, tested API on your GitHub</span></p>
             </div>
             <div class="stage field f2" aria-hidden="true">
@@ -773,8 +1039,8 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <div class="pane" role="tabpanel" id="p3" aria-labelledby="t3" hidden>
             <div class="pane-cap">
               <h3>Your full stack app, live</h3>
-              <p>Add a React frontend, deploy the app with a CI pipeline, and defend it in a live review where you explain every line, including the ones AI wrote.</p>
-              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: your own React and Spring Boot app, deployed</span></p>
+              <p>Add a React frontend, deploy it with CI, and explain every line in a live review.</p>
+              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: your own app, deployed</span></p>
             </div>
             <div class="stage field f3" aria-hidden="true">
               <div class="mock code-win">
@@ -788,8 +1054,8 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <div class="pane" role="tabpanel" id="p4" aria-labelledby="t4" hidden>
             <div class="pane-cap">
               <h3>Team projects and placement</h3>
-              <p>A team project on an industry brief, then a team capstone with an AI feature. In both you own and defend your own feature. The last four weeks add resume and GitHub reviews and three mock interviews.</p>
-              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: a Readiness Profile you can send to recruiters</span></p>
+              <p>Build a team capstone with an AI feature, then sharpen your resume and GitHub and take three mock interviews.</p>
+              <p class="have"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>You'll have: a profile you can send to recruiters</span></p>
             </div>
             <div class="stage field f4" aria-hidden="true">
               <div class="mock sprint">
@@ -806,33 +1072,12 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
     </div>
   </section>
 
-  <!-- STACK STRIP -->
-  <section class="strip" aria-label="What you will work with">
-    <div class="wrap strip-head">
-      <p>The stack and the habits hiring teams look for</p>
-    </div>
-    <div class="marquee">
-      <div class="mrow">
-        <span>Java 21</span><span>Spring Boot</span><span>REST APIs</span><span>SQL</span><span>React</span><span>Git and GitHub</span><span>JUnit</span><span>Docker</span><span>CI/CD</span><span>AI pair programming</span><span>Code review</span><span>Debugging</span><span>Mock interviews</span>
-        <span aria-hidden="true">Java 21</span><span aria-hidden="true">Spring Boot</span><span aria-hidden="true">REST APIs</span><span aria-hidden="true">SQL</span><span aria-hidden="true">React</span><span aria-hidden="true">Git and GitHub</span><span aria-hidden="true">JUnit</span><span aria-hidden="true">Docker</span><span aria-hidden="true">CI/CD</span><span aria-hidden="true">AI pair programming</span><span aria-hidden="true">Code review</span><span aria-hidden="true">Debugging</span><span aria-hidden="true">Mock interviews</span>
-      </div>
-    </div>
-    <div class="wrap">
-      <dl class="facts-row reveal">
-        <div><dt>Length</dt><dd>16 weeks</dd><span>Evenings and Saturdays</span></div>
-        <div><dt>Batch size</dt><dd>35–40</dd><span>One lead trainer</span></div>
-        <div><dt>Fee</dt><dd>₹35,000</dd><span>₹30,000 if you score Ready</span></div>
-        <div><dt>First batch</dt><dd>Jan 2027</dd><span>Online, live</span></div>
-      </dl>
-    </div>
-  </section>
-
   <!-- AI -->
   <section class="block" id="ai">
     <div class="wrap">
       <div class="sh reveal">
         <h2 class="title">AI is your pair, not your shortcut.</h2>
-        <p class="sh-p">Teams now write code with AI. The skill employers pay for is knowing what to ask, what to keep and what to throw away. That is what we teach, every week.</p>
+        <p class="sh-p">Employers now hire for how well you use AI: what to ask, what to keep, what to throw away.</p>
       </div>
       <div class="ai-grid">
         <article class="card feature reveal">
@@ -847,13 +1092,13 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
               <div class="af-step af-ok"><span class="af-tag">Tests</span><div class="af-bar"><i></i></div><span class="af-res"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>12 of 12 passing</span></div>
             </div>
           </div>
-          <p class="cap"><b>Ask, check, fix, explain.</b> AI writes a first draft. You test it, find what it missed and defend the final version in your own words.</p>
+          <p class="cap"><b>Ask, check, fix, explain.</b> AI drafts. You test it, catch what it missed and defend the final version.</p>
         </article>
         <ul class="ai-cards">
-          <li class="card mini reveal"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.2-4.4A8 8 0 1 1 21 12z"/><path d="M9 10h6M9 13.5h4"/></svg></span><p><b>Prompt</b>Ask AI the right question, with context, constraints and tests in mind.</p></li>
-          <li class="card mini reveal" style="--d:.05s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8.5 11l2 2 3.5-4"/></svg></span><p><b>Review</b>Read what it wrote like a senior would: tests, edge cases and security.</p></li>
-          <li class="card mini reveal" style="--d:.1s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M8 10h8"/></svg></span><p><b>Explain</b>Defend every line live, including the ones AI wrote.</p></li>
-          <li class="card mini reveal" style="--d:.15s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></span><p><b>Without AI</b>Checkpoint tests are taken without AI, so the skill is provably yours.</p></li>
+          <li class="card mini reveal"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.8 7L4 20l1.2-4.4A8 8 0 1 1 21 12z"/><path d="M9 10h6M9 13.5h4"/></svg></span><p><b>Prompt</b>Ask with context, constraints and tests in mind.</p></li>
+          <li class="card mini reveal" style="--d:.05s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M8.5 11l2 2 3.5-4"/></svg></span><p><b>Review</b>Check its code for edge cases and security.</p></li>
+          <li class="card mini reveal" style="--d:.1s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4M8 10h8"/></svg></span><p><b>Explain</b>Defend every line live, AI-written ones too.</p></li>
+          <li class="card mini reveal" style="--d:.15s"><span class="ai-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v2"/></svg></span><p><b>Without AI</b>Checkpoint tests prove the skill is yours.</p></li>
         </ul>
       </div>
     </div>
@@ -864,7 +1109,6 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
     <div class="wrap">
       <div class="sh reveal">
         <h2 class="title">Taught by an engineer who codes with AI every day.</h2>
-        <p class="sh-p">Your lead trainer is part of the TeXcela team and stays with your batch from the first class to demo day. A working engineer first, who loves teaching.</p>
       </div>
 
       <article class="card profile-card reveal">
@@ -903,25 +1147,18 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
               <a class="icon-btn" href="#" aria-label="Arjun Rao on GitHub"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.9-2.4c3-.3 6.1-1.5 6.1-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.6 0C5.8 1 4.7 1.3 4.7 1.3a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 3.2 8.5c0 5.1 3.1 6.3 6.1 6.6a3 3 0 0 0-.9 2.4V21"/></svg></a>
             </div>
           </div>
-          <p class="pc-quote">“I teach the way good teams work: write it, test it, then explain every line, including the ones AI wrote.”</p>
+          <p class="pc-quote">“Write it, test it, then explain every line, including the ones AI wrote.”</p>
           <span class="label pc-sk">Expertise</span>
           <ul class="skills">
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M9 3c0 1.5 1.5 1.5 1.5 3M12.5 3c0 1.5 1.5 1.5 1.5 3"/></svg></span><div><b>Java and Spring Boot</b><span>Production APIs and services</span></div></li>
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div><b>Full stack</b><span>SQL, REST, security and React</span></div></li>
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg></span><div><b>Shipping software</b><span>Docker, CI and deployments</span></div></li>
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><b>AI-assisted engineering</b><span>Uses AI daily, checks it critically</span></div></li>
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M8 9l2 1.5L8 12M12 12h4"/></svg></span><div><b>Live teaching</b><span>Explains hard ideas simply</span></div></li>
-            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/><path d="M13 5l-2 2 2 2"/></svg></span><div><b>Code review</b><span>High standards, kind feedback</span></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 10h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M9 3c0 1.5 1.5 1.5 1.5 3M12.5 3c0 1.5 1.5 1.5 1.5 3"/></svg></span><div><b>Java and Spring Boot</b></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></span><div><b>Full stack</b></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 8l5-5 5 5"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg></span><div><b>Shipping software</b></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span><div><b>AI-assisted engineering</b></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/><path d="M8 9l2 1.5L8 12M12 12h4"/></svg></span><div><b>Live teaching</b></div></li>
+            <li><span class="sk-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/><path d="M13 5l-2 2 2 2"/></svg></span><div><b>Code review</b></div></li>
           </ul>
         </div>
       </article>
-
-      <ul class="grid-cells works reveal">
-        <li><span class="w-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/></svg></span><h3>Teaches every live class</h3><p>Monday and Wednesday evenings and the Saturday build lab, live-coding with AI on screen.</p></li>
-        <li><span class="w-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="18" r="2.5"/><path d="M6 8.5v7M18 15.5V10a3 3 0 0 0-3-3h-4"/><path d="M13 5l-2 2 2 2"/></svg></span><h3>Reviews your code</h3><p>Feedback on your pull requests and projects that you can act on straight away.</p></li>
-        <li><span class="w-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></span><h3>Runs your checkpoints</h3><p>The same bar for everyone, and the final call on your Readiness Profile.</p></li>
-        <li><span class="w-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></span><h3>Tracks your progress</h3><p>Steps in early when you fall behind, with a plan rather than a warning.</p></li>
-      </ul>
 
       <div class="team reveal">
         <span class="label">With the rest of the TeXcela team</span>
@@ -931,35 +1168,88 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <li><span class="tm-i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></svg></span><div><b>Xcela recruiters</b><span>Run mock interviews and make introductions</span></div></li>
         </ul>
       </div>
-      <p class="under-note reveal">Meet Arjun at a free live session on 5 December 2026, before you enrol.</p>
     </div>
   </section>
 
-  <!-- WHY -->
-  <section class="block" id="why">
+  <!-- READINESS PROFILE -->
+  <section class="block" id="profile">
     <div class="wrap">
       <div class="sh reveal">
-        <h2 class="title">College taught you syntax. Interviews ask what you've built.</h2>
-        <p class="sh-p">If you've finished a degree, done a few tutorials, maybe even worked a while, and still feel unsure you're ready, you're not alone. TeXcela is built to close that gap: small batches, current skills and a recruiter at the end.</p>
+        <h2 class="title">Stop wondering if you're ready. See it, skill by skill.</h2>
+        <p class="sh-p">A certificate says you finished. Your Readiness Profile shows what you can actually do.</p>
       </div>
-      <div class="quotes">
-        <figure class="card quote reveal"><svg class="qm" viewBox="0 0 28 20" fill="currentColor" aria-hidden="true"><path d="M0 20V12.2C0 5.6 3.4 1.5 10.1 0l1.2 2.9C7.6 4.1 5.9 6.4 5.7 9.6H11V20zM16.6 20V12.2C16.6 5.6 20 1.5 26.7 0l1.2 2.9c-3.7 1.2-5.4 3.5-5.6 6.7h5.3V20z"/></svg><blockquote>I know the basics, but I freeze when I have to build something real.</blockquote></figure>
-        <figure class="card quote reveal" style="--d:.06s"><svg class="qm" viewBox="0 0 28 20" fill="currentColor" aria-hidden="true"><path d="M0 20V12.2C0 5.6 3.4 1.5 10.1 0l1.2 2.9C7.6 4.1 5.9 6.4 5.7 9.6H11V20zM16.6 20V12.2C16.6 5.6 20 1.5 26.7 0l1.2 2.9c-3.7 1.2-5.4 3.5-5.6 6.7h5.3V20z"/></svg><blockquote>Everyone says use AI to code. I don't know how teams actually do it.</blockquote></figure>
-        <figure class="card quote reveal" style="--d:.12s"><svg class="qm" viewBox="0 0 28 20" fill="currentColor" aria-hidden="true"><path d="M0 20V12.2C0 5.6 3.4 1.5 10.1 0l1.2 2.9C7.6 4.1 5.9 6.4 5.7 9.6H11V20zM16.6 20V12.2C16.6 5.6 20 1.5 26.7 0l1.2 2.9c-3.7 1.2-5.4 3.5-5.6 6.7h5.3V20z"/></svg><blockquote>I apply everywhere and never hear back. I can't tell what's missing.</blockquote></figure>
+      <div class="bento">
+        <article class="card feature reveal">
+          <div class="stage field f5" aria-hidden="true">
+            <div class="mock profile" id="bars">
+              <div class="pf-head"><span class="av">SL</span><div><b>Sample learner</b><span>Java Full Stack · Week 12 checkpoint</span></div><span class="tag">Example</span></div>
+              <div class="pf-overall"><span>Overall readiness</span><span class="pill-ok">Job-ready</span></div>
+              <ul class="bars">
+                <li><span>Spring Boot and APIs</span><b>Strong</b><i class="track"><i class="fill" style="--v:.94"></i></i></li>
+                <li><span>AI-native engineering</span><b>Strong</b><i class="track"><i class="fill" style="--v:.88"></i></i></li>
+                <li><span>SQL and databases</span><b>Job-ready</b><i class="track"><i class="fill l2" style="--v:.74"></i></i></li>
+                <li><span>Testing and code quality</span><b>Job-ready</b><i class="track"><i class="fill l2" style="--v:.7"></i></i></li>
+                <li><span>DevOps basics</span><b class="dim">Developing</b><i class="track"><i class="fill l1" style="--v:.48"></i></i></li>
+              </ul>
+            </div>
+          </div>
+          <p class="cap"><b>Ten skills, four levels.</b> Updated at five checkpoints, so you always know what to work on next.</p>
+        </article>
+        <article class="card feature reveal" style="--d:.08s">
+          <div class="stage field f6" aria-hidden="true">
+            <div class="mock evi">
+              <div class="evi-head"><b>Spring Boot and APIs</b><span class="pill-ok">Strong</span></div>
+              <ul class="evi-list">
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.9-2.4c3-.3 6.1-1.5 6.1-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C5.8 1 4.7 1.3 4.7 1.3a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 3.2 8.5c0 5.1 3.1 6.3 6.1 6.6a3 3 0 0 0-.9 2.4V21"/></svg></span><div>Code on GitHub<small>hireloop-api · 61 commits</small></div><em>Linked</em></li>
+                <li><span class="ic"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div>Automated tests<small>24 of 24 passing in CI</small></div><em>Pass</em></li>
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg></span><div>AI review<small>No security issues found</small></div><em>Pass</em></li>
+                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><div>Live defence<small>Explained the login flow, then changed it live</small></div><em>Approved</em></li>
+              </ul>
+              <div class="evi-note"><small>Reviewer note</small>Clean service layer and good tests. Next step: handle the empty-page case in search.</div>
+            </div>
+          </div>
+          <p class="cap"><b>Proof behind every score.</b> Code, tests, an AI review and a live defence, with levels set by Xcela recruiters.</p>
+        </article>
+        <article class="card feature wide reveal">
+          <div class="stage field f7 commit-stage" aria-hidden="true">
+            <div class="mock commits">
+              <div class="cm-head"><span class="av">SL</span><div><b>Sample learner</b><span>github.com/sample-learner · 16 weeks</span></div><span class="tag">Example</span></div>
+              <div class="cm-grid" id="commitGrid"></div>
+              <div class="cm-legend"><span>Week 1</span><span class="cm-scale">Less<i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i>More</span><span>Week 16</span></div>
+            </div>
+          </div>
+          <p class="cap"><b>Work you can show.</b> A real GitHub history from 16 weeks of building, the first thing hiring teams open.</p>
+        </article>
       </div>
-      <p class="close-line reveal">That gap is exactly what we close.</p>
+    </div>
+  </section>
 
-      <div class="compare reveal" role="table" aria-label="TeXcela compared with a typical course">
-        <div class="c-row c-head" role="row"><span role="columnheader"><span class="sr">Topic</span></span><span role="columnheader">A typical course</span><span role="columnheader" class="c-tx"><span class="sr">TeXcela</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -2 789.7 211.0" class="wm" aria-hidden="true" focusable="false"><g transform="translate(0.00 10.00) scale(2.12857) translate(-14 -34)"><rect x="14" y="34" width="66" height="17" rx="3" fill="currentColor"/><rect x="38.5" y="34" width="17" height="70" rx="3" fill="currentColor"/></g><path d="M192.0857142857143 161.4Q174.6857142857143 161.4 161.8857142857143 153.7Q149.0857142857143 146.0 142.0857142857143 133.0Q135.0857142857143 120.0 135.0857142857143 104.19999999999999Q135.0857142857143 87.8 142.3857142857143 75.0Q149.6857142857143 62.19999999999999 162.0857142857143 54.79999999999999Q174.4857142857143 47.39999999999999 190.0857142857143 47.39999999999999Q203.0857142857143 47.39999999999999 213.0857142857143 51.49999999999999Q223.0857142857143 55.599999999999994 229.9857142857143 62.99999999999999Q236.8857142857143 70.39999999999999 240.4857142857143 80.1Q244.0857142857143 89.8 244.0857142857143 101.19999999999999Q244.0857142857143 104.4 243.78571428571428 107.5Q243.4857142857143 110.6 242.6857142857143 112.8H166.2857142857143Q166.6857142857143 117.0 168.2857142857143 120.6Q171.2857142857143 127.6 177.48571428571432 131.5Q183.6857142857143 135.4 192.4857142857143 135.4Q200.4857142857143 135.4 206.1857142857143 132.2Q211.8857142857143 129.0 215.0857142857143 123.4L239.0857142857143 134.8Q235.8857142857143 142.8 228.9857142857143 148.8Q222.0857142857143 154.8 212.68571428571428 158.10000000000002Q203.28571428571428 161.4 192.0857142857143 161.4ZM166.8857142857143 90.8H212.2857142857143Q212.0857142857143 88.2 211.2857142857143 85.8Q209.0857142857143 79.19999999999999 203.5857142857143 75.29999999999998Q198.0857142857143 71.39999999999999 190.0857142857143 71.39999999999999Q182.2857142857143 71.39999999999999 176.6857142857143 75.19999999999999Q171.0857142857143 79.0 168.2857142857143 86.39999999999999Q167.4857142857143 88.39999999999999 166.8857142857143 90.8Z" fill="currentColor"/><path d="M264.45 30.76 L371.92 138.24 M371.92 30.76 L264.45 138.24" class="wx" stroke-width="41.52" stroke-linecap="round" fill="none"/><path d="M460.28571428571433 161.4Q443.8857142857143 161.4 430.78571428571433 153.9Q417.6857142857143 146.4 409.9857142857143 133.4Q402.28571428571433 120.4 402.28571428571433 104.19999999999999Q402.28571428571433 88.0 409.88571428571436 75.1Q417.4857142857143 62.19999999999999 430.6857142857143 54.79999999999999Q443.8857142857143 47.39999999999999 460.28571428571433 47.39999999999999Q472.4857142857143 47.39999999999999 482.88571428571436 51.599999999999994Q493.28571428571433 55.8 500.6857142857143 63.3Q508.0857142857143 70.8 511.28571428571433 81.0L485.28571428571433 92.2Q482.4857142857143 84.0 475.78571428571433 79.19999999999999Q469.0857142857143 74.39999999999999 460.28571428571433 74.39999999999999Q452.4857142857143 74.39999999999999 446.38571428571436 78.19999999999999Q440.28571428571433 82.0 436.78571428571433 88.8Q433.28571428571433 95.6 433.28571428571433 104.4Q433.28571428571433 113.19999999999999 436.78571428571433 120.0Q440.28571428571433 126.8 446.38571428571436 130.6Q452.4857142857143 134.4 460.28571428571433 134.4Q469.28571428571433 134.4 475.88571428571436 129.6Q482.4857142857143 124.8 485.28571428571433 116.6L511.28571428571433 128.0Q508.28571428571433 137.6 500.88571428571436 145.2Q493.4857142857143 152.8 483.0857142857143 157.10000000000002Q472.6857142857143 161.4 460.28571428571433 161.4Z" fill="currentColor"/><path d="M572.4857142857143 161.4Q555.0857142857143 161.4 542.2857142857142 153.7Q529.4857142857143 146.0 522.4857142857143 133.0Q515.4857142857143 120.0 515.4857142857143 104.19999999999999Q515.4857142857143 87.8 522.7857142857142 75.0Q530.0857142857143 62.19999999999999 542.4857142857143 54.79999999999999Q554.8857142857144 47.39999999999999 570.4857142857143 47.39999999999999Q583.4857142857143 47.39999999999999 593.4857142857143 51.49999999999999Q603.4857142857143 55.599999999999994 610.3857142857144 62.99999999999999Q617.2857142857143 70.39999999999999 620.8857142857144 80.1Q624.4857142857143 89.8 624.4857142857143 101.19999999999999Q624.4857142857143 104.4 624.1857142857143 107.5Q623.8857142857144 110.6 623.0857142857143 112.8H546.6857142857143Q547.0857142857143 117.0 548.6857142857143 120.6Q551.6857142857143 127.6 557.8857142857144 131.5Q564.0857142857143 135.4 572.8857142857144 135.4Q580.8857142857144 135.4 586.5857142857144 132.2Q592.2857142857143 129.0 595.4857142857143 123.4L619.4857142857143 134.8Q616.2857142857143 142.8 609.3857142857144 148.8Q602.4857142857143 154.8 593.0857142857143 158.10000000000002Q583.6857142857143 161.4 572.4857142857143 161.4ZM547.2857142857143 90.8H592.6857142857143Q592.4857142857143 88.2 591.6857142857143 85.8Q589.4857142857143 79.19999999999999 583.9857142857143 75.29999999999998Q578.4857142857143 71.39999999999999 570.4857142857143 71.39999999999999Q562.6857142857143 71.39999999999999 557.0857142857143 75.19999999999999Q551.4857142857143 79.0 548.6857142857143 86.39999999999999Q547.8857142857144 88.39999999999999 547.2857142857143 90.8Z" fill="currentColor"/><path d="M633.0857142857143 159.0V7.599999999999994H663.0857142857143V159.0Z" fill="currentColor"/><path d="M709.8857142857142 161.4Q698.0857142857143 161.4 689.4857142857143 157.60000000000002Q680.8857142857142 153.8 676.2857142857142 146.7Q671.6857142857143 139.6 671.6857142857143 129.8Q671.6857142857143 120.6 675.8857142857144 113.5Q680.0857142857143 106.4 688.7857142857142 101.6Q697.4857142857143 96.8 710.4857142857143 94.8L740.6857142857143 90.0V87.0Q740.6857142857143 80.8 735.7857142857142 76.6Q730.8857142857142 72.39999999999999 722.4857142857143 72.39999999999999Q714.4857142857143 72.39999999999999 708.3857142857144 76.79999999999998Q702.2857142857143 81.19999999999999 699.4857142857143 88.39999999999999L675.4857142857143 77.0Q678.6857142857143 67.8 685.6857142857143 61.199999999999996Q692.6857142857143 54.599999999999994 702.4857142857143 50.99999999999999Q712.2857142857143 47.39999999999999 723.8857142857142 47.39999999999999Q737.6857142857143 47.39999999999999 748.2857142857143 52.39999999999999Q758.8857142857144 57.39999999999999 764.7857142857143 66.29999999999998Q770.6857142857143 75.19999999999999 770.6857142857143 87.0V159.0H742.6857142857143V148.6Q740.8857142857142 150.6 738.8857142857142 152.0Q733.0857142857143 156.8 725.8857142857144 159.10000000000002Q718.6857142857143 161.4 709.8857142857142 161.4ZM740.6857142857143 112.0 715.8857142857142 116.4Q709.4857142857143 117.6 706.0857142857143 120.5Q702.6857142857143 123.4 702.6857142857143 128.8Q702.6857142857143 133.8 706.4857142857143 136.60000000000002Q710.2857142857143 139.4 715.8857142857142 139.4Q723.2857142857143 139.4 728.8857142857144 136.2Q734.4857142857143 133.0 737.5857142857143 127.5Q740.6857142857143 122.0 740.6857142857143 115.4Z" fill="currentColor"/></svg></span></div>
-        <div class="c-row" role="row"><span role="rowheader">Batch size</span><span role="cell">60 or more learners</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>35 to 40, with one lead trainer</span></div>
-        <div class="c-row" role="row"><span role="rowheader">What you learn</span><span role="cell">Older topics such as Servlets and JSP</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Java 21, Spring Boot 4, testing, CI and React, with AI built in</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Placement</span><span role="cell">A vague "network of companies"</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Xcela, a recruiter, introduces you to its own clients</span></div>
-        <div class="c-row" role="row"><span role="rowheader">AI</span><span role="cell">Banned, or left to you</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Taught, used and checked every week</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Results</span><span role="cell">Hand-picked success stories</span><span role="cell" class="c-tx"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>A full report on every learner who started</span></div>
+  <!-- PLACEMENT -->
+  <section class="block" id="placement">
+    <div class="wrap">
+      <div class="sh reveal">
+        <h2 class="title">How you get hired</h2>
+        <p class="sh-p">Xcela recruits developers every month. Job-ready learners go straight to its clients.</p>
       </div>
-      <div class="note-card reveal">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16M8 15v-4M12 15V8M16 15v-6"/></svg></span>
-        <p><b>We will publish Batch 1 results in full.</b> For every learner who started, not only the best ones: how many got placed within 90 and 180 days, the median salary and the employers. Xcela will confirm the numbers.</p>
+      <dl class="facts-row reveal">
+        <div><dt>Recruiting developers</dt><dd>9 years</dd></div>
+        <div><dt>Client companies</dt><dd>120+</dd></div>
+        <div><dt>Developers placed</dt><dd>1,500+</dd></div>
+      </dl>
+      <div class="hire reveal">
+        <ol class="hire-steps">
+          <li><span>01</span><div><h3>Your Readiness Profile</h3><p>Proof of ten skills, linked to your code.</p></div></li>
+          <li><span>02</span><div><h3>Resume and GitHub review</h3><p>Reviewed the way hiring teams read them.</p></div></li>
+          <li><span>03</span><div><h3>Mock interviews</h3><p>Technical, HR and project defence, with real interviewers.</p></div></li>
+          <li><span>04</span><div><h3>Introductions</h3><p>Job-ready? Xcela puts you in front of its clients.</p></div></li>
+        </ol>
+        <div class="hire-art"><div class="art b3" aria-hidden="true"><div class="gridbg"></div>
+<div class="mock prof"><div class="kp"><div class="ring-s big"><span>8.6</span></div><div><b>Sample learner</b><span>Readiness Profile · Job-ready</span></div></div>
+<div class="bars2"><div><span>Spring Boot</span><i style="--v:.94"></i></div><div><span>AI-native</span><i style="--v:.88"></i></div><div><span>SQL</span><i style="--v:.74"></i></div></div></div>
+<span class="lbl-chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>Introductions through Xcela</span>
+<div class="role r1"><span class="co" style="--h:#2C6E9C">F</span><div><small>Fintech · Bengaluru</small><b>Java Developer</b></div><em>Interview</em></div>
+<div class="role r2"><span class="co" style="--h:#7A4E8F">S</span><div><small>SaaS · Pune</small><b>Full Stack Engineer</b></div><em>Shortlisted</em></div>
+<div class="role r3"><span class="co" style="--h:#B4553A">E</span><div><small>E-commerce · Mumbai</small><b>Backend Engineer</b></div><em>Introduced</em></div></div></div>
       </div>
     </div>
   </section>
@@ -969,16 +1259,16 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
     <div class="wrap">
       <div class="sh sh-action reveal">
         <div>
-          <h2 class="title">Built block by block</h2>
-          <p class="sh-sub">From your first skill check to your first interview. Like our logo, every step adds a piece, and the last one raises it to the power of x.</p>
+          <h2 class="title">How to join</h2>
+          <p class="sh-sub">From your first skill check to your first interview, one block at a time.</p>
         </div>
         <a class="btn btn-secondary" href="#how">Take the free skill check</a>
       </div>
       <ol class="grid-cells steps reveal" id="steps">
-        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="off" x="38.5" y="34" width="17" height="70" rx="3"/></g></svg></span><span class="label">Step 1</span><h3>Take the free skill check</h3><p>About an hour, online, with no pass mark. It shows where you're starting from.</p></li>
-        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/></g></svg></span><span class="label">Step 2</span><h3>Get your basics ready</h3><p>If the check shows gaps, a short foundations bridge gets you ready before day one.</p></li>
-        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/><path class="xoff" d="M86 10 L108 32 M108 10 L86 32"/></g></svg></span><span class="label">Step 3 · Weeks 1–12</span><h3>Learn and build with AI</h3><p>Live classes, Saturday labs and your own full stack app. Your Readiness Profile updates at each of five checkpoints.</p></li>
-        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/><path class="xgold" d="M86 10 L108 32 M108 10 L86 32"/></g></svg></span><span class="label">Step 4 · Weeks 13–16</span><h3>Placement sprint and introductions</h3><p>A team capstone, mock interviews and a resume that shows your real work. When your profile shows you're job-ready, Xcela introduces you to companies that are hiring.</p></li>
+        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="off" x="38.5" y="34" width="17" height="70" rx="3"/></g></svg></span><span class="label">Step 1</span><h3>Take the free skill check</h3><p>About an hour, online, no pass mark.</p></li>
+        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/></g></svg></span><span class="label">Step 2</span><h3>Get your basics ready</h3><p>A short bridge if the check shows gaps.</p></li>
+        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/><path class="xoff" d="M86 10 L108 32 M108 10 L86 32"/></g></svg></span><span class="label">Step 3 · Weeks 1–12</span><h3>Learn and build with AI</h3><p>Live classes, Saturday labs and your own full stack app.</p></li>
+        <li><span class="node" aria-hidden="true"><svg viewBox="0 0 120 120"><g transform="translate(-3.1 5)"><rect class="on" x="14" y="34" width="66" height="17" rx="3"/><rect class="on" x="38.5" y="34" width="17" height="70" rx="3"/><path class="xgold" d="M86 10 L108 32 M108 10 L86 32"/></g></svg></span><span class="label">Step 4 · Weeks 13–16</span><h3>Placement sprint</h3><p>Capstone, mock interviews, then introductions to hiring companies.</p></li>
       </ol>
 
       <div class="week-wrap reveal">
@@ -996,70 +1286,12 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
     </div>
   </section>
 
-  <!-- READINESS PROFILE -->
-  <section class="block" id="profile">
-    <div class="wrap">
-      <div class="sh reveal">
-        <h2 class="title">Stop wondering if you're ready. See it, skill by skill.</h2>
-        <p class="sh-p">A certificate says you finished a course. Your Readiness Profile shows ten skills companies hire for, the level you reached in each, and the work behind every score.</p>
-      </div>
-      <div class="bento">
-        <article class="card feature reveal">
-          <div class="stage field f5" aria-hidden="true">
-            <div class="mock profile" id="bars">
-              <div class="pf-head"><span class="av">SL</span><div><b>Sample learner</b><span>Java Full Stack · Week 12 checkpoint</span></div><span class="tag">Example</span></div>
-              <div class="pf-overall"><span>Overall readiness</span><span class="pill-ok">Job-ready</span></div>
-              <ul class="bars">
-                <li><span>Spring Boot and APIs</span><b>Strong</b><i class="track"><i class="fill" style="--v:.94"></i></i></li>
-                <li><span>AI-native engineering</span><b>Strong</b><i class="track"><i class="fill" style="--v:.88"></i></i></li>
-                <li><span>SQL and databases</span><b>Job-ready</b><i class="track"><i class="fill l2" style="--v:.74"></i></i></li>
-                <li><span>Testing and code quality</span><b>Job-ready</b><i class="track"><i class="fill l2" style="--v:.7"></i></i></li>
-                <li><span>DevOps basics</span><b class="dim">Developing</b><i class="track"><i class="fill l1" style="--v:.48"></i></i></li>
-              </ul>
-            </div>
-          </div>
-          <p class="cap"><b>Ten skills, four levels.</b> Not yet, Developing, Job-ready and Strong. Your profile updates at five checkpoints, so you always know what to work on next.</p>
-        </article>
-        <article class="card feature reveal" style="--d:.08s">
-          <div class="stage field f6" aria-hidden="true">
-            <div class="mock evi">
-              <div class="evi-head"><b>Spring Boot and APIs</b><span class="pill-ok">Strong</span></div>
-              <ul class="evi-list">
-                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5a3 3 0 0 0-.9-2.4c3-.3 6.1-1.5 6.1-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C5.8 1 4.7 1.3 4.7 1.3a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 3.2 8.5c0 5.1 3.1 6.3 6.1 6.6a3 3 0 0 0-.9 2.4V21"/></svg></span><div>Code on GitHub<small>hireloop-api · 61 commits</small></div><em>Linked</em></li>
-                <li><span class="ic"><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div>Automated tests<small>24 of 24 passing in CI</small></div><em>Pass</em></li>
-                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/></svg></span><div>AI review<small>No security issues found</small></div><em>Pass</em></li>
-                <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0"/></svg></span><div>Live defence<small>Explained the login flow, then changed it live</small></div><em>Approved</em></li>
-              </ul>
-              <div class="evi-note"><small>Reviewer note</small>Clean service layer and good tests. Next step: handle the empty-page case in search.</div>
-            </div>
-          </div>
-          <p class="cap"><b>Proof behind every score.</b> Code, tests, an AI review and a live defence sit behind each level. All ten skills on your profile work like this.</p>
-        </article>
-        <article class="card feature wide reveal">
-          <div class="stage field f7 commit-stage" aria-hidden="true">
-            <div class="mock commits">
-              <div class="cm-head"><span class="av">SL</span><div><b>Sample learner</b><span>github.com/sample-learner · 16 weeks</span></div><span class="tag">Example</span></div>
-              <div class="cm-grid" id="commitGrid"></div>
-              <div class="cm-legend"><span>Week 1</span><span class="cm-scale">Less<i class="c0"></i><i class="c1"></i><i class="c2"></i><i class="c3"></i><i class="c4"></i>More</span><span>Week 16</span></div>
-            </div>
-          </div>
-          <p class="cap"><b>Work you can show, every week.</b> Daily practice, Saturday labs and four milestone projects leave a real history on your GitHub, the first thing a hiring team opens.</p>
-        </article>
-      </div>
-      <ul class="mini-cards">
-        <li class="card mini reveal"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span><p><b>Evidence behind every score</b>Your repos, tests and project demos sit behind each level.</p></li>
-        <li class="card mini reveal" style="--d:.06s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6.5 6.5 0 0 1 3.5 6"/></svg></span><p><b>Checked by tests, AI and people</b>Automated checks run first, AI reviews next, and people decide anything borderline.</p></li>
-        <li class="card mini reveal" style="--d:.12s"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><p><b>Set with recruiters</b>Xcela recruiters decide what each level means, so companies can trust it.</p></li>
-      </ul>
-    </div>
-  </section>
-
   <!-- FEES -->
   <section class="block" id="fees">
     <div class="wrap">
       <div class="sh reveal">
         <h2 class="title">One price, no surprises</h2>
-        <p class="sh-p">No inflated "original price", no countdown timers and no loans. Here is what Batch 1 costs and how you can pay.</p>
+        <p class="sh-p">No inflated "original price", no countdown timers, no loans.</p>
       </div>
       <div class="panel price-panel reveal">
         <div class="pp-main">
@@ -1070,45 +1302,16 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
           <a class="btn btn-primary btn-block" href="#how">Take the free skill check</a>
         </div>
         <ul class="pp-list">
-          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Pay in parts.</b> For example, ₹15,000 now, then two parts of ₹10,000, with every date in writing before you pay.</p></li>
-          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>No loans, no auto-debit.</b> We never sign you up with a lender.</p></li>
-          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>If you leave:</b> a full refund within 14 days of the batch start, no questions asked.</p></li>
-          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Included:</b> live classes, recordings, Saturday labs, code reviews, three mock interviews, your Readiness Profile and introductions through Xcela.</p></li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Pay in parts.</b> ₹15,000 now, then two parts of ₹10,000, every date in writing.</p></li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>No loans, no auto-debit.</b></p></li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Full refund</b> within 14 days of the batch start.</p></li>
+          <li><svg class="ck" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg><p><b>Included:</b> live classes, recordings, labs, code reviews, 3 mock interviews, your Readiness Profile and introductions.</p></li>
         </ul>
       </div>
-      <div class="two-cards">
-        <article class="card text-card reveal">
-          <h3>Is it a job guarantee?</h3>
-          <p>No. Anyone who promises you a job is guessing about companies they don't control. Here is what we do promise:</p>
-          <p class="commit">Every learner who passes the final checkpoint gets at least three interviews with Xcela’s client companies.</p>
-        </article>
-        <article class="card text-card reveal" style="--d:.06s">
-          <h3>Why ₹35,000 for 16 weeks?</h3>
-          <p>You pay for a small batch, a lead trainer who knows your work, code reviews on every task, and a recruiter at the end. Most cheaper courses run longer, with batches of 60 or more.</p>
-          <a class="link-arrow" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Ask about fees on WhatsApp <span aria-hidden="true">→</span></a>
-        </article>
+      <div class="promise reveal">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+        <p><b>Our promise:</b> pass the final checkpoint and get at least three interviews with Xcela's client companies. <a class="link-arrow" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Ask about fees <span aria-hidden="true">→</span></a></p>
       </div>
-    </div>
-  </section>
-
-  <!-- PLACEMENT -->
-  <section class="block" id="placement">
-    <div class="wrap">
-      <div class="sh reveal">
-        <h2 class="title">How you get hired</h2>
-        <p class="sh-p">Xcela recruits developers for companies every month. TeXcela puts job-ready learners in front of them.</p>
-      </div>
-      <dl class="facts-row reveal">
-        <div><dt>Recruiting developers</dt><dd>9 years</dd></div>
-        <div><dt>Client companies</dt><dd>120+</dd></div>
-        <div><dt>Developers placed</dt><dd>1,500+</dd></div>
-      </dl>
-      <ol class="grid-cells psteps reveal">
-        <li><span class="label">01</span><h3>Your Readiness Profile</h3><p>Ten skills, scored at five checkpoints and linked to your code. Hiring teams see the proof.</p></li>
-        <li><span class="label">02</span><h3>Resume and GitHub review</h3><p>An Xcela recruiter reviews your resume, LinkedIn and GitHub the way hiring teams read them.</p></li>
-        <li><span class="label">03</span><h3>Mock interviews with recruiters</h3><p>Technical, HR and a project defence, run by people who run real interviews.</p></li>
-        <li><span class="label">04</span><h3>Interviews with Xcela clients</h3><p>When your profile shows you're job-ready, Xcela introduces you to the companies it hires for.</p></li>
-      </ol>
     </div>
   </section>
 
@@ -1116,18 +1319,17 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
   <section class="block" id="faq">
     <div class="wrap faq-grid">
       <div class="faq-head reveal">
-        <h2 class="title">Questions, answered</h2>
-        <p class="sh-sub">Something else? <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Message us on WhatsApp</a>, we reply the same day. Every detail is also on the <a href="facts.html">TeXcela facts</a> page.</p>
+        <h2 class="title">Questions</h2>
+        <p class="sh-sub">Something else? <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Message us on WhatsApp</a>. We reply the same day.</p>
       </div>
       <div class="faq reveal" style="--d:.08s">
-        <details open><summary>How much does it cost?<span class="pm" aria-hidden="true"></span></summary><div class="ans">₹35,000 for the full 16 weeks, or ₹30,000 if you score Ready on the free skill check. You can pay in parts. There are no loans and no hidden extras.</div></details>
-        <details><summary>When does the first batch start?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Monday, 11 January 2027. Take the free skill check to reserve your place.</div></details>
-        <details><summary>Do I need to know coding already?<span class="pm" aria-hidden="true"></span></summary><div class="ans">You need basic programming in any language; this is not a course for complete beginners. The skill check has no pass mark. If you have gaps, a short foundations bridge gets you ready first. If you need more time, we give you a prep path and a re-check for the next batch.</div></details>
-        <details><summary>Can I do it alongside college or a job?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Yes. Live classes are on Monday and Wednesday evenings and build labs on Saturdays. Plan for about 12 to 14 hours a week.</div></details>
-        <details><summary>Do you guarantee a job?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No, and be careful of anyone who does. We prove what you can do, prepare you for interviews and introduce job-ready learners to Xcela's client companies. See <a href="#fees">what we do promise</a>.</div></details>
-        <details><summary>Can I pay in parts, and what if I leave?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Yes, in instalments on our course platform, with all dates shown before you pay. We don't arrange loans or auto-debits. If you leave: a full refund within 14 days of the batch start.</div></details>
-        <details><summary>Isn't using AI cheating?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No. It's how teams work now. We score how well you prompt, review, test and explain AI-written code, and checkpoint tests are taken without AI, so the work is still yours.</div></details>
-        <details><summary>What is the Readiness Profile?<span class="pm" aria-hidden="true"></span></summary><div class="ans">A profile of ten skills companies hire for, showing the level you reached in each and the work behind every score. It is checked by tests, AI review and people, and set with Xcela recruiters.</div></details>
+        <details open><summary>How much does it cost, and can I pay in parts?<span class="pm" aria-hidden="true"></span></summary><div class="ans">₹35,000 including GST, or ₹30,000 if you score Ready on the skill check. Pay in parts, with no loans or hidden extras.</div></details>
+        <details><summary>When does the first batch start?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Monday, 11 January 2027.</div></details>
+        <details><summary>Do I need to know coding already?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Basic programming in any language. If the skill check shows gaps, a short bridge gets you ready first.</div></details>
+        <details><summary>Can I do it alongside college or a job?<span class="pm" aria-hidden="true"></span></summary><div class="ans">Yes. Live classes are on Monday and Wednesday evenings, labs on Saturdays: about 12 to 14 hours a week.</div></details>
+        <details><summary>Do you guarantee a job?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No, and be careful of anyone who does. Job-ready learners get introductions to Xcela's client companies. See <a href="#fees">our promise</a>.</div></details>
+        <details><summary>What if I leave?<span class="pm" aria-hidden="true"></span></summary><div class="ans">A full refund within 14 days of the batch start, no questions asked.</div></details>
+        <details><summary>Isn't using AI cheating?<span class="pm" aria-hidden="true"></span></summary><div class="ans">No. It's how teams work now, and checkpoint tests are taken without AI, so the skill is yours.</div></details>
       </div>
     </div>
   </section>
@@ -1138,13 +1340,13 @@ footer{border-top:1px solid var(--line);padding-top:72px;overflow:hidden}
       <div class="panel final-panel reveal">
         <div class="fp-main">
           <h2 class="title">You're closer than you think.</h2>
-          <p class="sh-sub">Start with the free skill check. It takes about an hour, there's no pass mark, and a Ready score brings your fee down to ₹30,000.</p>
+          <p class="sh-sub">Start with the free skill check: about an hour, no pass mark.</p>
           <div class="cta-row"><a class="btn btn-primary" href="#how">Take the free skill check</a></div>
         </div>
         <div class="fp-side">
           <div class="fp-item">
             <h3>Watch a free live session first</h3>
-            <p>Every Saturday at 8 pm IST, online and free. Our lead trainer builds a tested Spring Boot API with AI in 60 minutes and answers your questions.</p>
+            <p>Every Saturday, 8 pm IST, free. Watch Arjun build a tested API with AI in 60 minutes.</p>
             <a class="link-arrow" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener">Register on WhatsApp <span aria-hidden="true">→</span></a>
           </div>
           <div class="fp-item">
