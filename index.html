@@ -875,6 +875,13 @@ pre{margin:0}
 .wa3 h3+p{margin-top:6px;font-size:15px;color:var(--text-2)}
 @media (max-width:860px){.wa3{grid-template-columns:minmax(0,1fr)}.wa3 article+article{border-left:0;border-top:1px solid var(--line)}.wq{min-height:0}}
 
+/* smooth scrolling: hide-then-show once (no flash), no blur, no background repaint loops */
+.js-reveal .reveal:not(.play){opacity:0;transform:translateY(12px)}
+.reveal.play{animation:none!important;opacity:1;transform:none;transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+.stage.field{animation:none!important}
+.feature.play .bars .fill,.feature.play .af-step,.feature.play .af-bar i{animation:none!important}
+.mrow{will-change:transform}
+
 </style>
 </head>
 <body>
@@ -1410,7 +1417,8 @@ pre{margin:0}
   if ('IntersectionObserver' in window && !reduce){
     var io = new IntersectionObserver(function(entries){
       entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('play'); io.unobserve(e.target); } });
-    }, {rootMargin:'0px 0px -6% 0px', threshold:0});
+    }, {rootMargin:'0px 0px 15% 0px', threshold:0});
+    document.documentElement.classList.add('js-reveal');
     document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   }
 
